@@ -32,6 +32,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Freelance.Controllers.ProjectPostController",
+    "Method": "GetUserId",
+    "RelativePath": "api/ProjectPost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Freelance.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
