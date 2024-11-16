@@ -1,5 +1,6 @@
 ﻿using Freelance.Models.DTO;
 using Freelance.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -77,6 +78,14 @@ namespace Freelance.Controllers
                 }
             }
             return BadRequest("Username or Password incorrect");
+        }
+
+        [HttpGet("Get the user who is loged in")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetUserId()
+        {
+            var claims = await userManager.GetUserAsync(User);
+            return Ok(claims);
         }
     }
 }

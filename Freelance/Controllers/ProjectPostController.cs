@@ -1,8 +1,14 @@
-﻿using Freelance.Data;
+﻿using AutoMapper;
+using Freelance.Data;
+using Freelance.Models.Domain;
+using Freelance.Models.DTO.ProjectPostDto;
+using Freelance.Models.DTO.ProjectPostDTO;
+using Freelance.Repositories.IProjectPost;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Freelance.Controllers
@@ -13,55 +19,105 @@ namespace Freelance.Controllers
     {
         private readonly FreelanceDbContext context;
         private readonly UserManager<IdentityUser> userManager;
-        public ProjectPostController(FreelanceDbContext context, UserManager<IdentityUser> userManager) 
+        private readonly IMapper mapper;
+        private readonly IProjectPostRepository projectPostRepository;
+        public ProjectPostController(FreelanceDbContext context, UserManager<IdentityUser> userManager, IMapper mapper, IProjectPostRepository projectPostRepository)
         {
             this.context = context;
             this.userManager = userManager;
+            this.mapper = mapper;
+            this.projectPostRepository = projectPostRepository;
         }
 
-        /*[HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetProjectPosts()
-        {
-            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-
-            if (string.IsNullOrEmpty(emailClaim))
-            {
-                return Ok("Email claim not found.");
-            }
-
-
-            return Ok($"Success {emailClaim}");
-        }*/
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetUserId()
-        {
-            var claims = await userManager.GetUserAsync(User);
-            return Ok(claims);
-        }
-        /*[HttpGet]
-        [Authorize(Roles ="Admin")]
-        public async Task<IActionResult> GetUserId()
-        {
-            var claims = await userManager.GetUserAsync(User);
-            return Ok(claims);
-        }
-
-        [HttpGet]
+        [HttpPost("Create-Project-Post")]
         [Authorize]
-        public async Task<IActionResult> GetUserIid()
+        public async Task<IActionResult> CreateAsync([FromBody] AddProjectPostDto addProjectPostDto)
         {
-            // Get the user from UserManager
             var user = await userManager.GetUserAsync(User);
+            if (user == null) { return Unauthorized("User ID claim not found."); }
 
-            if (user == null)
+            var projectPostDomainModel = mapper.Map<ProjectPost>(addProjectPostDto);
+            projectPostDomainModel.UserId = user?.Id;
+
+            await projectPostRepository.CreateAsync(projectPostDomainModel);
+
+            return Ok(mapper.Map<ProjectPostDto>(projectPostDomainModel));
+        }
+
+        [HttpGet("Get-My-Projects")]
+        [Authorize]
+        public async Task<IActionResult> GetMyProjects()
+        {
+            /*var user = await userManager.GetUserAsync(User);
+            if (user == null) { return Unauthorized("User ID claim not found."); }
+
+            var projectposts = await context.ProjectPosts.Where(p => p.UserId == Id )
+            .ToListAsync();*/
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return Unauthorized("User not found.");
+                return Unauthorized();
             }
-            var id = user.Id;
-            // Return the User ID
-            return Ok(new { UserId = user.Id });
-        }*/
+
+            // Fetch project posts created by the logged-in user
+            var projectPosts = await context.ProjectPosts
+                .Where(p => p.UserId == userId)
+                .ToListAsync();
+
+            return Ok(projectPosts);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null) { return Unauthorized(); }
+
+            var projectPost = await context.ProjectPosts.FindAsync(id);
+            if (projectPost == null)
+            {
+                return NotFound("Project post not found.");
+            }
+
+            // Check if the logged-in user is the owner of the post
+            if (projectPost.UserId != userId)
+            {
+                return Forbid("You are not authorized to delete this project post.");
+            }
+
+            await projectPostRepository.DeleteAsync(id);
+            //return Ok(projectPost);
+            return Ok(mapper.Map<ProjectPostDto>(projectPost));
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] UpdateProjectPostRequestDto updateDto)
+        {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if(userId == null) { return Unauthorized(); }
+
+            var projectPost = await context.ProjectPosts.FindAsync(id);
+
+            if (projectPost == null)
+            {
+                return NotFound("Project post not found.");
+            }
+
+            // Check if the logged-in user is the owner of the post
+            if (projectPost.UserId != userId)
+            {
+                return Forbid("You are not authorized to update this project post.");
+            }
+            mapper.Map(updateDto,projectPost);
+
+            await projectPostRepository.UpdateAsync(id,projectPost);
+            return Ok("Project updated successfully");
+
+        }
+
+
     }
 }

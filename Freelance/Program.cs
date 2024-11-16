@@ -1,6 +1,7 @@
 using Freelance.Data;
 using Freelance.Mappings;
 using Freelance.Repositories;
+using Freelance.Repositories.IProjectPost;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -50,7 +51,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<FreelanceDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("FreelanceConnectionString")));
 // IRepository
-//builder.Services.AddScoped<IProjectPostRepository, SQLProjectPostRepository>();
+builder.Services.AddScoped<IProjectPostRepository, SQLProjectPostRepository>();
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 //AutoMapper
 

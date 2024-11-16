@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Freelance.Models.Domain;
+using Freelance.Models.DTO.ProjectPostDto;
+using Freelance.Models.DTO.ProjectPostDTO;
 
 namespace Freelance.Mappings
 {
@@ -6,9 +9,11 @@ namespace Freelance.Mappings
     {
         public AutoMapperProfiles()
         {
-            //CreateMap<AddProjectPostRequestDto, ProjectPost>();
-            //CreateMap<AddProjectPostRequestDto, ProjectPost>().ReverseMap();
-            //CreateMap<ProjectPost, ProjectPostDto>().ReverseMap();
+            //Mapping ProjectPost Model
+            CreateMap<AddProjectPostDto, ProjectPost>().ReverseMap();
+            CreateMap<ProjectPost, ProjectPostDto>().ReverseMap();
+            CreateMap<UpdateProjectPostRequestDto, ProjectPost>().ReverseMap();
+
         }
     }
 }

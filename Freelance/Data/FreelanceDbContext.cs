@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Freelance.Models.Domain;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +10,7 @@ namespace Freelance.Data
         public FreelanceDbContext(DbContextOptions<FreelanceDbContext> options) : base(options)
         {
         }
-
+        public DbSet<ProjectPost> ProjectPosts { get; set; }  
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
