@@ -4,6 +4,7 @@ using Freelance.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Freelance.Migrations
 {
     [DbContext(typeof(FreelanceDbContext))]
-    partial class FreelanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241117204208_Proposalaa")]
+    partial class Proposalaa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,6 +48,9 @@ namespace Freelance.Migrations
                     b.Property<Guid?>("SelectedProposalId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("SelectedProposalId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -55,7 +61,7 @@ namespace Freelance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SelectedProposalId");
+                    b.HasIndex("SelectedProposalId1");
 
                     b.HasIndex("UserId");
 
@@ -71,9 +77,6 @@ namespace Freelance.Migrations
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("FreelancerId")
                         .IsRequired()
@@ -318,8 +321,9 @@ namespace Freelance.Migrations
                 {
                     b.HasOne("Freelance.Models.Domain.Proposal", "SelectedProposal")
                         .WithMany()
-                        .HasForeignKey("SelectedProposalId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("SelectedProposalId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()

@@ -2,12 +2,14 @@ using Freelance.Data;
 using Freelance.Mappings;
 using Freelance.Repositories;
 using Freelance.Repositories.IProjectPost;
+using Freelance.Repositories.IProposal;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,6 +55,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("FreelanceConnect
 // IRepository
 builder.Services.AddScoped<IProjectPostRepository, SQLProjectPostRepository>();
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IProposalRepository, SQLProposalRepository>();
 //AutoMapper
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));

@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\NB\\source\\repos\\Freelance\\",
+  "WorkspaceRootPath": "C:\\Users\\oltib\\source\\repos\\Freelance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\nb\\source\\repos\\freelance\\freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\nb\\source\\repos\\freelance\\freelance\\repositories\\iprojectpost\\sqlprojectpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\repositories\\iprojectpost\\sqlprojectpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\repositories\\iproposal\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\repositories\\iproposal\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\nb\\source\\repos\\freelance\\freelance\\models\\dto\\projectpostdto\\updateprojectpostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\models\\dto\\projectpostdto\\updateprojectpostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\repositories\\iproposal\\sqlproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\repositories\\iproposal\\sqlproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\nb\\source\\repos\\freelance\\freelance\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\nb\\source\\repos\\freelance\\freelance\\repositories\\iprojectpost\\iprojectpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\repositories\\iprojectpost\\iprojectpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\controllers\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AutoMapperProfiles.cs",
-              "DocumentMoniker": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeDocumentMoniker": "Freelance\\Mappings\\AutoMapperProfiles.cs",
-              "ToolTip": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeToolTip": "Freelance\\Mappings\\AutoMapperProfiles.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\appsettings.json",
+              "RelativeDocumentMoniker": "Freelance\\appsettings.json",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\appsettings.json*",
+              "RelativeToolTip": "Freelance\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-18T17:30:24.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IProposalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
+              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\IProposalRepository.cs*",
+              "RelativeToolTip": "Freelance\\Repositories\\IProposal\\IProposalRepository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T20:15:58.837Z",
+              "WhenOpened": "2024-11-18T15:16:16.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProposalController.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProposalController.cs",
+              "RelativeDocumentMoniker": "Freelance\\Controllers\\ProposalController.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProposalController.cs",
+              "RelativeToolTip": "Freelance\\Controllers\\ProposalController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:15:55.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UpdateProjectPostRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Models\\DTO\\ProjectPostDTO\\UpdateProjectPostRequestDto.cs",
-              "RelativeDocumentMoniker": "Freelance\\Models\\DTO\\ProjectPostDTO\\UpdateProjectPostRequestDto.cs",
-              "ToolTip": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Models\\DTO\\ProjectPostDTO\\UpdateProjectPostRequestDto.cs",
-              "RelativeToolTip": "Freelance\\Models\\DTO\\ProjectPostDTO\\UpdateProjectPostRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Title": "SQLProposalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "RelativeToolTip": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T20:10:32.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SQLProjectPostRepository.cs",
-              "DocumentMoniker": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Repositories\\IProjectPost\\SQLProjectPostRepository.cs",
-              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProjectPost\\SQLProjectPostRepository.cs",
-              "ToolTip": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Repositories\\IProjectPost\\SQLProjectPostRepository.cs",
-              "RelativeToolTip": "Freelance\\Repositories\\IProjectPost\\SQLProjectPostRepository.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAwCYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T19:46:35.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IProjectPostRepository.cs",
-              "DocumentMoniker": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Repositories\\IProjectPost\\IProjectPostRepository.cs",
-              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProjectPost\\IProjectPostRepository.cs",
-              "ToolTip": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Repositories\\IProjectPost\\IProjectPostRepository.cs",
-              "RelativeToolTip": "Freelance\\Repositories\\IProjectPost\\IProjectPostRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T19:45:53.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProjectPostController.cs",
-              "DocumentMoniker": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Controllers\\ProjectPostController.cs",
-              "RelativeDocumentMoniker": "Freelance\\Controllers\\ProjectPostController.cs",
-              "ToolTip": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Controllers\\ProjectPostController.cs*",
-              "RelativeToolTip": "Freelance\\Controllers\\ProjectPostController.cs*",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAQwHQAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T19:38:02.688Z",
+              "WhenOpened": "2024-11-18T15:15:40.115Z",
               "EditorCaption": ""
             }
           ]

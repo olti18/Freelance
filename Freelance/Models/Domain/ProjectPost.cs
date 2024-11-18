@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Freelance.Models.Domain
 {
@@ -15,7 +16,12 @@ namespace Freelance.Models.Domain
         public IdentityUser User { get; set; }
         [ForeignKey("UserId")]
         public string UserId { get; set; }
-        
 
-    }
+		[JsonIgnore] // Loop in DB
+		public ICollection<Proposal> Proposals { get; set; }
+
+		public Guid? SelectedProposalId { get; set; } // Nullable in case no one is assigned yet
+		public Proposal SelectedProposal { get; set; } // Navigation property
+
+	}
 }

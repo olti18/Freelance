@@ -7,5 +7,5 @@
         public string Author { get; set; }
         public Double Budget { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-    }
+	}
 }

@@ -48,25 +48,18 @@ namespace Freelance.Controllers
         [Authorize]
         public async Task<IActionResult> GetMyProjects()
         {
-            /*var user = await userManager.GetUserAsync(User);
-            if (user == null) { return Unauthorized("User ID claim not found."); }
 
-            var projectposts = await context.ProjectPosts.Where(p => p.UserId == Id )
-            .ToListAsync();*/
-            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            if (string.IsNullOrEmpty(userId))
-            {
-                return Unauthorized();
-            }
+			if (string.IsNullOrEmpty(userId))
+			{
+				return Unauthorized();
+			}
 
-            // Fetch project posts created by the logged-in user
-            var projectPosts = await context.ProjectPosts
-                .Where(p => p.UserId == userId)
-                .ToListAsync();
+			var projects = await projectPostRepository.GetMyProjectsAsync(userId);
 
-            return Ok(projectPosts);
-        }
+			return Ok(projects);
+		}
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)

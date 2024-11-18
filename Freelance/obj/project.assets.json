@@ -5102,19 +5102,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\NB\\.nuget\\packages\\": {}
+    "C:\\Users\\oltib\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Freelance.csproj",
+      "projectUniqueName": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance\\Freelance.csproj",
       "projectName": "Freelance",
-      "projectPath": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\Freelance.csproj",
-      "packagesPath": "C:\\Users\\NB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NB\\source\\repos\\Freelance\\Freelance\\obj\\",
+      "projectPath": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance\\Freelance.csproj",
+      "packagesPath": "C:\\Users\\oltib\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\NB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\oltib\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5122,6 +5122,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5199,7 +5200,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

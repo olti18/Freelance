@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace Freelance.Data
 {
@@ -10,12 +11,43 @@ namespace Freelance.Data
         public FreelanceDbContext(DbContextOptions<FreelanceDbContext> options) : base(options)
         {
         }
-        public DbSet<ProjectPost> ProjectPosts { get; set; }  
+        public DbSet<ProjectPost> ProjectPosts { get; set; }
+        public DbSet<Proposal> Proposals { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+			builder.Entity<ProjectPost>()
+	          .HasOne(j => j.SelectedProposal)
+	          .WithMany() // No back-reference in Proposal
+	          .HasForeignKey(j => j.SelectedProposalId)
+	          .OnDelete(DeleteBehavior.Restrict);
 
-            var adminRoleId = "262fe4f8-1a16-4022-896b-02a91ac72401";
+			builder.Entity<ProjectPost>()
+		    .HasMany(pp => pp.Proposals) // Navigation property in ProjectPost
+		    .WithOne(p => p.ProjectPost) // Navigation property in Proposal
+		    .HasForeignKey(p => p.ProjectPostId) // Foreign key in Proposal
+		    .OnDelete(DeleteBehavior.Restrict); // Optional: cascade delete proposals when ProjectPost is deleted
+
+			// Configure ProjectPost -> User (Client)
+			builder.Entity<ProjectPost>()
+				.HasOne(pp => pp.User) // One Client per ProjectPost
+				.WithMany() // A user can have multiple ProjectPosts
+				.HasForeignKey(pp => pp.UserId)
+				.OnDelete(DeleteBehavior.Restrict); // Prevent user deletion if ProjectPosts exist
+
+			// Configure Proposal -> User (Freelancer)
+			builder.Entity<Proposal>()
+				.HasOne(p => p.Freelancer) // One Freelancer per Proposal
+				.WithMany() // A user can have multiple Proposals
+				.HasForeignKey(p => p.FreelancerId)
+				.OnDelete(DeleteBehavior.Restrict); // Pre
+
+
+
+			//
+			var adminRoleId = "262fe4f8-1a16-4022-896b-02a91ac72401";
             var userRoleId = "c104631c-600f-468b-8f00-daa624010de2";
 
             var roles = new List<IdentityRole>

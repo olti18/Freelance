@@ -1,5 +1,7 @@
 ﻿using Freelance.Data;
 using Freelance.Models.Domain;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Freelance.Repositories.IProjectPost
@@ -7,10 +9,13 @@ namespace Freelance.Repositories.IProjectPost
     public class SQLProjectPostRepository : IProjectPostRepository
     {
         private readonly FreelanceDbContext context;
-        public SQLProjectPostRepository(FreelanceDbContext context)
+        private readonly UserManager<IdentityUser> userManager;
+        public SQLProjectPostRepository(FreelanceDbContext context, UserManager<IdentityUser> userManager)
         {
             this.context = context;
-        }
+            this.userManager = userManager;
+
+		}
         public async Task<ProjectPost> CreateAsync(ProjectPost projectPost)
         {
             await context.AddAsync(projectPost);
@@ -26,7 +31,28 @@ namespace Freelance.Repositories.IProjectPost
             return existingProject;
         }
 
-        public async Task<ProjectPost?> UpdateAsync(Guid id, ProjectPost? projectPost)
+		public async Task<List<ProjectPost?>> GetMyProjectsAsync(string userId)
+		{
+			if (string.IsNullOrEmpty(userId))
+			{
+				throw new ArgumentException("User ID cannot be null or empty", nameof(userId));
+			}
+
+			/*var projectPosts = await context.ProjectPosts
+				.Where(p => p.UserId == userId) 
+				.ToListAsync();*/
+			//var projectPosts = await context.ProjectPosts.Include(j => j.Proposals)
+			// .Where(p => p.UserId == userId)
+			//.ToListAsync();
+			var myProjects = context.ProjectPosts
+	            .Where(p => p.UserId == userId) // Filter by UserId
+	            .Include(p => p.Proposals) // Include related Proposals
+	            .ThenInclude(pr => pr.Freelancer) // Include Freelancer for each proposal
+	            .ToList();
+            return myProjects;
+        }
+
+		public async Task<ProjectPost?> UpdateAsync(Guid id, ProjectPost? projectPost)
         {
             var existingProject = await context.ProjectPosts.FirstOrDefaultAsync(x => x.Id == id);
             if (existingProject == null)
