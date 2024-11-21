@@ -16,7 +16,9 @@ namespace Freelance.Repositories.IProjectPost
             this.userManager = userManager;
 
 		}
-        public async Task<ProjectPost> CreateAsync(ProjectPost projectPost)
+
+
+		public async Task<ProjectPost> CreateAsync(ProjectPost projectPost)
         {
             await context.AddAsync(projectPost);
             await context.SaveChangesAsync();

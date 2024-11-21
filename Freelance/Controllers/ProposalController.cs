@@ -3,11 +3,14 @@ using Freelance.Data;
 using Freelance.Models.Domain;
 using Freelance.Models.DTO.ProposalDTO;
 using Freelance.Repositories.IProjectPost;
+using Freelance.Repositories.IProposal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.SqlServer.Server;
 using System;
+using System.Security.Claims;
 
 namespace Freelance.Controllers
 {
@@ -17,28 +20,60 @@ namespace Freelance.Controllers
 	{
 		private readonly FreelanceDbContext _appDbContext;
 		private readonly IMapper _mapper;
-
-		public ProposalController(FreelanceDbContext appDbContext, IMapper mapper)
+		private readonly IProposalRepository proposalRepository;
+		public ProposalController(FreelanceDbContext appDbContext, IMapper mapper, IProposalRepository proposalRepository)
 		{
-			_appDbContext = appDbContext;
-			_mapper = mapper;
+			this._appDbContext = appDbContext;
+			this._mapper = mapper;
+			this.proposalRepository = proposalRepository;
+		}
+		[HttpPost]
+		public async Task<IActionResult> CreateProposalAsync (AddProposalDto addProposalDto)
+		{
+			if (addProposalDto == null)	
+			{
+				return BadRequest("Proposal Data is Required");
+			}
+
+			var projectPostExists = await _appDbContext.ProjectPosts.AnyAsync(pp => pp.Id == addProposalDto.ProjectPostId);
+			if (!projectPostExists)
+			{
+				return BadRequest("The specified ProjectPostId does not exist.");
+			}
+			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is used
+			if (string.IsNullOrEmpty(userId))
+			{
+				return Unauthorized("User must be logged in to create a proposal.");
+			}
+
+			var proposal = _mapper.Map<Proposal>(addProposalDto);
+			proposal.FreelancerId = userId; // Assuming FreelancerId is a GUID
+			proposal.CreatedDate = DateTime.UtcNow;
+
+			// Save the proposal using the repository
+			var createdProposal = await proposalRepository.CreateProposalAsync(proposal);
+
+			// Return 200 OK with the created proposal
+			return Ok(new
+			{
+				message = "Proposal created successfully.",
+				proposal = createdProposal
+			});
+
 		}
 
-		// GET: api/proposal
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProposalDto>>> GetProposals()
+		public async Task<IActionResult> GetMyProposalAsync()
 		{
-			var proposals = await _appDbContext.Proposals.ToListAsync();
+			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is used
 
-			// Map the proposals to ProposalDto using AutoMapper
-			var proposalDtos = _mapper.Map<List<ProposalDto>>(proposals);
+			var proposals = await proposalRepository.GetMyProposalAsync(userId);
 
-			return Ok(proposalDtos);
+			return Ok(proposals);
 		}
 
-		// GET: api/proposal/5
 		[HttpGet("{id}")]
-		public async Task<ActionResult<ProposalDto>> GetProposal(Guid id)
+		public async Task<ActionResult> GetProposalAsync(Guid id)
 		{
 			var proposal = await _appDbContext.Proposals.FindAsync(id);
 
@@ -53,165 +88,34 @@ namespace Freelance.Controllers
 			return Ok(proposalDto);
 		}
 
-		[HttpPost]
-		public async Task<ActionResult<Proposal>> CreateProposal(AddProposalDto addProposalDto)
-		{
-			if (addProposalDto == null)
-			{
-				return BadRequest("Proposal data is required.");
-			}
-
-			// Check if the ProjectPostId exists
-			var projectPostExists = await _appDbContext.ProjectPosts.AnyAsync(pp => pp.Id == addProposalDto.ProjectPostId);
-			if (!projectPostExists)
-			{
-				return BadRequest("The specified ProjectPostId does not exist.");
-			}
-
-			// Extract FreelancerId from JWT claims
-			var freelancerId = User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
-			if (freelancerId == null)
-			{
-				return Unauthorized("Freelancer identity could not be determined.");
-			}
-
-			// Map DTO to Proposal model
-			var proposal = _mapper.Map<Proposal>(addProposalDto);
-			proposal.FreelancerId = freelancerId;
-			proposal.CreatedDate = DateTime.UtcNow;
-
-			// Save to the database
-			_appDbContext.Proposals.Add(proposal);
-			await _appDbContext.SaveChangesAsync();
-
-			return CreatedAtAction(nameof(GetProposal), new { id = proposal.Id }, proposal);
-		}
-
-
-		// POST: api/proposal
-		/*[HttpPost]
-		public async Task<ActionResult<Proposal>> CreateProposal(AddProposalDto addProposalDto)
-		{
-			// Validate the incoming data
-			if (addProposalDto == null)
-			{
-				return BadRequest("Proposal data is required.");
-			}
-
-			// Extract the FreelancerId from the current user (JWT claims)
-			var freelancerId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-			if (freelancerId == null)
-			{
-				return Unauthorized("Freelancer identity could not be determined.");
-			}
-
-			// Map DTO to the Proposal domain model using AutoMapper
-			var proposal = _mapper.Map<Proposal>(addProposalDto);
-			proposal.FreelancerId = freelancerId; // Automatically assign the FreelancerId
-			proposal.CreatedDate = DateTime.UtcNow; // Ensure the CreatedDate is set
-
-			// Save the new proposal to the database
-			_appDbContext.Proposals.Add(proposal);
-			await _appDbContext.SaveChangesAsync();
-
-			// Return the created proposal with status code 201 (Created)
-			return CreatedAtAction(nameof(GetProposal), new { id = proposal.Id }, proposal);
-		}
-		*/
-
-		// PUT: api/proposal/5
 		[HttpPut("{id}")]
-		public async Task<IActionResult> UpdateProposal(Guid id, UpdateProposalDto updateProposalDto)
+		public async Task<IActionResult> UpdateProposal(Guid id, [FromBody] UpdateProposalDto updateProposalDto)
 		{
-			if (id != updateProposalDto.Id)
+			var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get the currently authenticated user's ID
+
+			if (string.IsNullOrEmpty(currentUserId))
 			{
-				return BadRequest("Proposal ID mismatch.");
+				return Unauthorized("User is not authenticated.");
 			}
 
-			var proposal = await _appDbContext.Proposals.FindAsync(id);
+			var updatedProposal = await proposalRepository.UpdateProposalAsync(id, currentUserId, updateProposalDto);
 
-			if (proposal == null)
+			if (updatedProposal == null)
 			{
-				return NotFound();
+				return NotFound("Proposal not found.");
 			}
 
-			// Map UpdateProposalDto to Proposal entity
-			_mapper.Map(updateProposalDto, proposal);
-
-			// Save changes to DB
-			_appDbContext.Entry(proposal).State = EntityState.Modified;
-			await _appDbContext.SaveChangesAsync();
-
-			return NoContent();
+			return Ok(updatedProposal); // Return the updated proposal
 		}
 
-		// DELETE: api/proposal/5
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteProposal(Guid id)
 		{
-			var proposal = await _appDbContext.Proposals.FindAsync(id);
+			await proposalRepository.DeleteProposalAsync(id); 
 
-			if (proposal == null)
-			{
-				return NotFound();
-			}
-
-			_appDbContext.Proposals.Remove(proposal);
-			await _appDbContext.SaveChangesAsync();
-
-			return NoContent();
+			return Ok(id);
 		}
 
-		[HttpGet("{projectId}/freelancers")]
-		public async Task<ActionResult<List<FreelancerDto>>> GetFreelancersByProject(Guid projectId)
-		{
-			// Validate the project ID
-			var projectExists = await _appDbContext.ProjectPosts.AnyAsync(p => p.Id == projectId);
-			if (!projectExists)
-			{
-				return NotFound("Project not found.");
-			}
-
-			// Query for freelancers who proposed on this project
-			var freelancers = await (from proposal in _appDbContext.Proposals
-									 join user in _appDbContext.Users on proposal.FreelancerId equals user.Id
-									 where proposal.ProjectPostId == projectId
-									 select new FreelancerDto
-									 {
-										 Id = user.Id,
-										 FullName = user.UserName, // Adjust if you have a specific FullName field
-										 Email = user.Email,
-									 }).ToListAsync();
-
-			
-
-			return Ok(freelancers);
-		}
-
-
-		/*[HttpGet("user/{userId}/proposals")]
-		public async Task<ActionResult<IEnumerable<ProposalDto>>> GetProposalsForUserProjects(string userId)
-		{
-			// Get all project posts created by the user (client)
-			var projectPosts = await _appDbContext.ProjectPosts
-				.Where(p => p.UserId == userId) // Filter by the user's ID
-				.ToListAsync();
-
-			if (projectPosts == null || projectPosts.Count == 0)
-			{
-				return NotFound("No project posts found for this user.");
-			}
-
-			// Get all proposals associated with the project posts
-			var proposals = await _appDbContext.Proposals
-				.Where(p => projectPosts.Select(pp => pp.Id).Contains(p.ProjectPostId)) // Filter by project posts
-				.ToListAsync();
-
-			// Map the Proposals to ProposalDto using AutoMapper
-			var proposalDtos = _mapper.Map<List<ProposalDto>>(proposals);
-
-			return Ok(proposalDtos); // Return the mapped proposals
-		}*/
-
+	
 	}
 }

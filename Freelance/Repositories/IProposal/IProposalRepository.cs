@@ -7,7 +7,10 @@ namespace Freelance.Repositories.IProposal
 	{
 
 		//Task<Proposal> GetProposals();
-		//Task<Proposal> GetProposals();
-
+		//Task<Proposal> GetProposalsAsync();
+		Task<List<Proposal?>> GetMyProposalAsync(string userId);
+		Task<Proposal> CreateProposalAsync(Proposal proposal);
+		Task<Proposal> UpdateProposalAsync(Guid proposalId, string userId, UpdateProposalDto updateProposalDto);
+		Task<Proposal> DeleteProposalAsync(Guid proposalId);
 	}
 }
