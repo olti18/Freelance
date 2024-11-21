@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "wwpim+9V+aua6MHSwGOAKIxdM04Niar6RB5fmVmdtPw=",
+  "Hash": "LOhO/t+nTWnSe4Ac3fSkbMluREFezUHCsSPwcCB082A=",
   "Source": "Freelance",
   "BasePath": "_content/Freelance",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

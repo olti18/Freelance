@@ -40,12 +40,6 @@ namespace Freelance.Repositories.IProjectPost
 				throw new ArgumentException("User ID cannot be null or empty", nameof(userId));
 			}
 
-			/*var projectPosts = await context.ProjectPosts
-				.Where(p => p.UserId == userId) 
-				.ToListAsync();*/
-			//var projectPosts = await context.ProjectPosts.Include(j => j.Proposals)
-			// .Where(p => p.UserId == userId)
-			//.ToListAsync();
 			var myProjects = context.ProjectPosts
 	            .Where(p => p.UserId == userId) // Filter by UserId
 	            .Include(p => p.Proposals) // Include related Proposals

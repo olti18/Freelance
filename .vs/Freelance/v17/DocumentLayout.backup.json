@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\oltib\\source\\repos\\Freelance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\controllers\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\proposalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\models\\dto\\proposaldto\\updateproposaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\models\\dto\\proposaldto\\updateproposaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\repositories\\iproposal\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\repositories\\iproposal\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\models\\domain\\proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\models\\domain\\proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\repositories\\iproposal\\sqlproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SQLProposalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
-              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
-              "RelativeToolTip": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Proposal.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Models\\Domain\\Proposal.cs",
+              "RelativeDocumentMoniker": "Freelance\\Models\\Domain\\Proposal.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Models\\Domain\\Proposal.cs",
+              "RelativeToolTip": "Freelance\\Models\\Domain\\Proposal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T20:16:31.351Z",
+              "WhenOpened": "2024-11-21T19:20:40.721Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IProposalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
-              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
-              "RelativeToolTip": "Freelance\\Repositories\\IProposal\\IProposalRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Title": "SQLProposalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "RelativeDocumentMoniker": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "RelativeToolTip": "Freelance\\Repositories\\IProposal\\SQLProposalRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T20:16:03.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UpdateProposalDto.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Models\\DTO\\ProposalDTO\\UpdateProposalDto.cs",
-              "RelativeDocumentMoniker": "Freelance\\Models\\DTO\\ProposalDTO\\UpdateProposalDto.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Models\\DTO\\ProposalDTO\\UpdateProposalDto.cs",
-              "RelativeToolTip": "Freelance\\Models\\DTO\\ProposalDTO\\UpdateProposalDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T20:08:36.293Z",
+              "WhenOpened": "2024-11-21T19:13:21.342Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProposalController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProposalController.cs",
-              "RelativeDocumentMoniker": "Freelance\\Controllers\\ProposalController.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProposalController.cs",
-              "RelativeToolTip": "Freelance\\Controllers\\ProposalController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwHYAAAABAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Freelance\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\AdminController.cs*",
+              "RelativeToolTip": "Freelance\\Controllers\\AdminController.cs*",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T19:56:35.72Z",
+              "WhenOpened": "2024-11-21T19:04:50.856Z",
               "EditorCaption": ""
             }
           ]

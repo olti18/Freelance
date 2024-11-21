@@ -4,6 +4,7 @@ using Freelance.Models.Domain;
 using Freelance.Models.DTO.ProposalDTO;
 using Freelance.Repositories.IProjectPost;
 using Freelance.Repositories.IProposal;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -116,6 +117,39 @@ namespace Freelance.Controllers
 			return Ok(id);
 		}
 
-	
+		[HttpPost("accept-proposal/{proposalId}")]
+		//[Authorize(Roles = "Client")]
+		public async Task<IActionResult> AcceptProposal(Guid proposalId)
+		{
+			// Retrieve the proposal and associated ProjectPost
+			var proposal = await _appDbContext.Proposals
+				.Include(p => p.ProjectPost) // Include ProjectPost for validation
+				.FirstOrDefaultAsync(p => p.Id == proposalId);
+
+			if (proposal == null)
+				return NotFound("Proposal not found.");
+
+			// Ensure the logged-in user is the author of the ProjectPost
+			var loggedInUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			if (proposal.ProjectPost.UserId != loggedInUserId)
+				return Unauthorized("You are not authorized to accept this proposal.");
+
+			// Ensure the ProjectPost does not already have a selected proposal
+			if (proposal.ProjectPost.SelectedProposalId != null)
+				return BadRequest("A freelancer has already been selected for this project.");
+
+			// Mark the proposal as selected
+			proposal.IsSelected = true;
+
+			// Update the ProjectPost with the selected proposal
+			proposal.ProjectPost.SelectedProposalId = proposal.Id;
+
+			// Save changes to the database
+			await _appDbContext.SaveChangesAsync();
+
+			return Ok(new { Message = "Proposal accepted successfully." });
+		}
+
+
 	}
 }

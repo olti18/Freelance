@@ -46,8 +46,7 @@ namespace Freelance.Controllers
             }
             return BadRequest("Something went wrong!!");
         }
-
-
+                                                            
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)

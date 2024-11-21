@@ -350,3 +350,7 @@ C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\refint\Freelanc
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\Freelance.pdb
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\Freelance.genruntimeconfig.cache
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\ref\Freelance.dll
+C:\Users\oltib\Source\Repos\Freelance\Freelance\bin\Debug\net8.0\Freelance.staticwebassets.endpoints.json
+C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets\msbuild.Freelance.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

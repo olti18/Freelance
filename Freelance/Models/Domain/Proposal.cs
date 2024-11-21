@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Freelance.Models.Domain
 {
@@ -12,12 +13,13 @@ namespace Freelance.Models.Domain
 		public DateTime CreatedDate { get; set; }
 
 		public Guid ProjectPostId { get; set; } // Foreign Key to JobPost
+		[JsonIgnore]
 		public ProjectPost ProjectPost { get; set; }
 		// Foreign Key 
 		public string FreelancerId { get; set; } // Foreign key
 		public IdentityUser Freelancer { get; set; } // Navigation property
 
-		public bool IsSelected { get; set; }
+		public bool IsSelected { get; set; } = false;
 		
 	}
 }
