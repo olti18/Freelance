@@ -28,6 +28,7 @@ namespace Freelance.Controllers
 			this._mapper = mapper;
 			this.proposalRepository = proposalRepository;
 		}
+
 		[HttpPost]
 		public async Task<IActionResult> CreateProposalAsync (AddProposalDto addProposalDto)
 		{
@@ -63,7 +64,7 @@ namespace Freelance.Controllers
 
 		}
 
-		[HttpGet]
+		/*[HttpGet]	
 		public async Task<IActionResult> GetMyProposalAsync()
 		{
 			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is used
@@ -72,8 +73,40 @@ namespace Freelance.Controllers
 
 			return Ok(proposals);
 		}
+		*/
+		[HttpGet]
+		public async Task<IActionResult> GetAllProposals()
+		{
+			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is 
 
-		[HttpGet("{id}")]
+		
+			var projectsWithProposals = await _appDbContext.ProjectPosts
+			.Where(p => p.UserId == userId) // Filtron projektet që përkasin përdoruesit
+			.Select(p => new
+			{
+				ProjectId = p.Id,
+				Title = p.Title,
+				Description = p.Description,
+				Author = p.Author,
+				Budget = p.Budget,
+				CreatedDate = p.CreatedDate,
+				Proposals = p.Proposals.Select(pr => new
+			{
+				ProposalId = pr.Id,
+				Content = pr.Content,
+				ProposedAmount = pr.ProposedAmount,
+				SubmittedDate = pr.SubmittedDate,
+				FreelancerId = pr.FreelancerId,
+				FreelancerName = pr.Freelancer.UserName,
+			  IsSelected = pr.IsSelected
+			}).ToList()
+		})
+			.ToListAsync();
+
+			return Ok(projectsWithProposals);
+		}
+
+		/*[HttpGet("{id}")]
 		public async Task<ActionResult> GetProposalAsync(Guid id)
 		{
 			var proposal = await _appDbContext.Proposals.FindAsync(id);
@@ -87,7 +120,7 @@ namespace Freelance.Controllers
 			var proposalDto = _mapper.Map<ProposalDto>(proposal);
 
 			return Ok(proposalDto);
-		}
+		}*/
 
 		[HttpPut("{id}")]
 		public async Task<IActionResult> UpdateProposal(Guid id, [FromBody] UpdateProposalDto updateProposalDto)
@@ -105,7 +138,7 @@ namespace Freelance.Controllers
 			{
 				return NotFound("Proposal not found.");
 			}
-
+				
 			return Ok(updatedProposal); // Return the updated proposal
 		}
 

@@ -60,7 +60,13 @@ namespace Freelance.Controllers
 
 			return Ok(projects);
 		}
+        [HttpGet]
+        public async Task<IActionResult> GetAllProjects()
+        {
+            var projects = await projectPostRepository.GetProjectsAsync();
 
+            return Ok(projects);
+        }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
         {
@@ -107,6 +113,7 @@ namespace Freelance.Controllers
             mapper.Map(updateDto,projectPost);
 
             await projectPostRepository.UpdateAsync(id,projectPost);
+
             return Ok("Project updated successfully");
 
         }

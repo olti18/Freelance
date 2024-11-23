@@ -26,6 +26,22 @@ namespace Freelance.Repositories.IProposal
 			return proposal; 
 		}
 
+		/*public async Task<List<Proposal?>> GetAllProposalAsync(string userId)
+		{
+			if (string.IsNullOrEmpty(userId))
+			{
+				throw new ArgumentException("User ID cannot be null or empty", nameof(userId));
+			}
+
+			var proposals = await context.ProjectPosts
+				.Where(x => x.UserId == userId)
+				.Include(p => p.Proposals)
+				.ThenInclude(p => p.FreelancerId)
+				.ToListAsync();
+
+			return proposals;
+		}*/
+
 		public async Task<Proposal> DeleteProposalAsync(Guid id)
 		{
 			var proposal = await context.Proposals.FindAsync(id);
@@ -41,7 +57,7 @@ namespace Freelance.Repositories.IProposal
 			return proposal;
 		}
 
-		public async Task<List<Proposal?>> GetMyProposalAsync(string userId)
+		/*public async Task<List<Proposal?>> GetMyProposalAsync(string userId)
 		{
 			if (string.IsNullOrEmpty(userId))
 			{
@@ -54,7 +70,7 @@ namespace Freelance.Repositories.IProposal
 				.ToListAsync();
 
 			return proposals;
-		}
+		}*/
 
 		public async Task<Proposal?> UpdateProposalAsync(Guid proposalId, string userId, UpdateProposalDto updateProposalDto)
 		{

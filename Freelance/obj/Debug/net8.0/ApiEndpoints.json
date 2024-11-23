@@ -69,6 +69,16 @@
   },
   {
     "ContainingType": "Freelance.Controllers.ProjectPostController",
+    "Method": "GetAllProjects",
+    "RelativePath": "api/ProjectPost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Freelance.Controllers.ProjectPostController",
     "Method": "DeleteAsync",
     "RelativePath": "api/ProjectPost/{id}",
     "HttpMethod": "DELETE",
@@ -148,28 +158,12 @@
   },
   {
     "ContainingType": "Freelance.Controllers.ProposalController",
-    "Method": "GetMyProposalAsync",
+    "Method": "GetAllProposals",
     "RelativePath": "api/Proposal",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Freelance.Controllers.ProposalController",
-    "Method": "GetProposalAsync",
-    "RelativePath": "api/Proposal/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {

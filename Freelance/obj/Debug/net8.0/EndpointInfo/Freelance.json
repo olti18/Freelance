@@ -157,6 +157,18 @@
         }
       }
     },
+    "/api/ProjectPost": {
+      "get": {
+        "tags": [
+          "ProjectPost"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ProjectPost/{id}": {
       "delete": {
         "tags": [
@@ -262,27 +274,6 @@
       }
     },
     "/api/Proposal/{id}": {
-      "get": {
-        "tags": [
-          "Proposal"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "put": {
         "tags": [
           "Proposal"

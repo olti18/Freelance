@@ -8,6 +8,6 @@ namespace Freelance.Repositories.IProjectPost
         Task<ProjectPost?> DeleteAsync(Guid id);
         Task<ProjectPost?> UpdateAsync(Guid id, ProjectPost? projectPost);
         Task<List<ProjectPost?>> GetMyProjectsAsync(string userId);
-
+        Task<List<ProjectPost>> GetProjectsAsync();
     }
 }

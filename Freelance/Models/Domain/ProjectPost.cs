@@ -14,6 +14,7 @@ namespace Freelance.Models.Domain
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         // Foreign Key 
         public IdentityUser User { get; set; }
+
         [ForeignKey("UserId")]
         public string UserId { get; set; }
 
@@ -22,6 +23,8 @@ namespace Freelance.Models.Domain
 
 		public Guid? SelectedProposalId { get; set; } // Nullable in case no one is assigned yet
 		public Proposal SelectedProposal { get; set; } // Navigation property
+		public ICollection<Rating> Ratings { get; set; } = new HashSet<Rating>();
+
 
 	}
 }

@@ -13,11 +13,28 @@ namespace Freelance.Data
         }
         public DbSet<ProjectPost> ProjectPosts { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
+		public DbSet<Rating> Ratings { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+			// Rating -> User (Freelancer)
+			builder.Entity<Rating>()
+				.HasOne(r => r.User)
+				.WithMany() // A User can receive many ratings (no navigation property back to Rating)
+				.HasForeignKey(r => r.UserId)
+				.OnDelete(DeleteBehavior.Restrict); // Prevent cascading deletes
+
+			// Rating -> JobPost
+			builder.Entity<Rating>()
+				.HasOne(r => r.ProjectPost)
+				.WithMany(jp => jp.Ratings) // JobPost can have many Ratings
+				.HasForeignKey(r => r.ProjectPostId)
+				.OnDelete(DeleteBehavior.Cascade); // Optional: delete ratings if the JobPost is deleted
+			
+			//
 			builder.Entity<ProjectPost>()
 	          .HasOne(j => j.SelectedProposal)
 	          .WithMany() // No back-reference in Proposal

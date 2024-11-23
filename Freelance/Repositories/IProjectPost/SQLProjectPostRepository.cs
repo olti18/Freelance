@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Freelance.Repositories.IProjectPost
 {
-    public class SQLProjectPostRepository : IProjectPostRepository
+	public class SQLProjectPostRepository : IProjectPostRepository
     {
         private readonly FreelanceDbContext context;
         private readonly UserManager<IdentityUser> userManager;
@@ -47,6 +47,14 @@ namespace Freelance.Repositories.IProjectPost
 	            .ToList();
             return myProjects;
         }
+
+		public async Task<List<ProjectPost>> GetProjectsAsync()
+		{
+			var AllProjects = context.ProjectPosts
+                .ToList();
+
+			return AllProjects;
+		}
 
 		public async Task<ProjectPost?> UpdateAsync(Guid id, ProjectPost? projectPost)
         {
