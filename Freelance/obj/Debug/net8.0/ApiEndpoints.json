@@ -220,6 +220,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Freelance.Controllers.RatingController",
+    "Method": "RateFreelancer",
+    "RelativePath": "api/Rating/rate-freelancer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRatingDto",
+        "Type": "Freelance.Models.DTO.RatingDTO.AddRatingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Freelance.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

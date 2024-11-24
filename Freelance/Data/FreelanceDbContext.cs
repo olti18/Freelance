@@ -10,6 +10,7 @@ namespace Freelance.Data
     {
         public FreelanceDbContext(DbContextOptions<FreelanceDbContext> options) : base(options)
         {
+
         }
         public DbSet<ProjectPost> ProjectPosts { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
