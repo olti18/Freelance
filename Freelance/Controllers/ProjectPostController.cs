@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Freelance.CostumActionFilters;
 using Freelance.Data;
 using Freelance.Models.Domain;
 using Freelance.Models.DTO.ProjectPostDto;
@@ -31,6 +32,7 @@ namespace Freelance.Controllers
 
         [HttpPost("Create-Project-Post")]
         [Authorize]
+        [ValidateModel]
         public async Task<IActionResult> CreateAsync([FromBody] AddProjectPostDto addProjectPostDto)
         {
             var user = await userManager.GetUserAsync(User);
