@@ -27,35 +27,7 @@ namespace Freelance.Controllers
 			this.projectPostRepository = projectPostRepository;
 		}
 
-		/*[HttpPost]
-		public async Task<IActionResult> RateFreelancer([FromBody] AddRatingDto addRatingDto)
-		{
-			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-			if (userId is null) 
-			{
-				return BadRequest("User is not autheticated or null");
-			}
-
-			
-
-			var proposal = await context.Proposals
-				.Include(p => p.Freelancer)
-				.Include(p => p.ProjectPost)
-				.FirstOrDefaultAsync(p => p.Id == addRatingDto.ProposalId && p.ProjectPost.UserId == userId);
-			
-			if (proposal == null || !proposal.IsSelected)
-				return BadRequest("Rating can only be submitted for selected proposals of your own project posts.");
-
-			var rating = mapper.Map<Rating>(addRatingDto);
-			
-			// Create and save the rating
-
-
-			context.Ratings.Add(rating);
-			await context.SaveChangesAsync();
-
-			return Ok("Rating submitted successfully.");
-		}*/
+		
 		[HttpPost("rate-freelancer")]
 		public async Task<IActionResult> RateFreelancer([FromBody] AddRatingDto addRatingDto)
 		{
