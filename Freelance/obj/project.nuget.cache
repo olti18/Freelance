@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ycuwhKzjsZA=",
+  "dgSpecHash": "SXyv1aPcl0U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance\\Freelance.csproj",
+  "projectFilePath": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Freelance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oltib\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\oltib\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

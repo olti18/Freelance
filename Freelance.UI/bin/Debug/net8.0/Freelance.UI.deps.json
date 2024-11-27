@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Freelance.UI/1.0.0": {
+        "runtime": {
+          "Freelance.UI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Freelance.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
