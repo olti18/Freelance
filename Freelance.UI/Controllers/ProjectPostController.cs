@@ -13,6 +13,7 @@ namespace Freelance.UI.Controllers
 			this._httpClientFactory = _httpClientFactory;
 		}
 
+		/*[HttpGet]
 		public async Task<IActionResult> GetAllProjects()
 		{
 			// Retrieve the token from cookies
@@ -42,16 +43,27 @@ namespace Freelance.UI.Controllers
 
 			ModelState.AddModelError("", "Failed to fetch projects.");
 			return View(new List<ProjectPostDto>());
-		}
+		}*/
 
 
-		/*[HttpGet]
+		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			List<ProjectPostDto> response = new List<ProjectPostDto>();
+			var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+			if (string.IsNullOrEmpty(jwtToken))
+			{
+				return RedirectToAction("Login", "Account"); // Redirect to login if no token
+			}
+			var client = _httpClientFactory.CreateClient();
+			//var httpClient = _httpClientFactory.CreateClient();
+
+			// Add the Authorization header
+			client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
 			try
 			{
-				var client = _httpClientFactory.CreateClient();
+				//var client = _httpClientFactory.CreateClient();
 				var httpResonseMessage = await client.GetAsync("https://localhost:7086/api/ProjectPost");
 
 				httpResonseMessage.EnsureSuccessStatusCode();
@@ -80,6 +92,6 @@ namespace Freelance.UI.Controllers
 			//	return View("Error");
 			//}
 
-		}*/
+		}
 	}
 }

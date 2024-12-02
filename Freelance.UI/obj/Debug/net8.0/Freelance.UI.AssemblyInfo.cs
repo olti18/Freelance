@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Freelance.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3ad23a3a5bb3f2da5c9a7e316d67ff6b6643c2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7f4df6881fda62de8d578f0034899ff874de06a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Freelance.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Freelance.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
