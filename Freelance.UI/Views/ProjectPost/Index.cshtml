@@ -1,6 +1,76 @@
 ﻿@model IEnumerable<Freelance.UI.Models.ProjectPostDto>
 
-<h1>All Project Posts</h1>
+
+
+
+<div class="container mt-5">
+    <div class="row g-4">
+        @foreach (var post in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm" style="background-color: #f8f9fa; border: 1px solid #dee2e6;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@post.Title</h5>
+                        <p class="card-text text-muted">
+                            <strong>Description:</strong> @post.Description
+                        </p>
+                        <p class="card-text">
+                            <strong>Author:</strong> <span class="text-success">@post.Author</span>
+                        </p>
+                        <p class="card-text">
+                            <strong>Budget:</strong> <span class="text-danger">$@post.Budget</span>
+                        </p>
+                        <p class="card-text text-secondary">
+                            <strong>Created:</strong> @post.CreatedDate.ToString("yyyy-MM-dd HH:mm")
+                        </p>
+                        <div class="text-end">
+                            <strong><a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-primary">Make a Proposal</a></strong>
+                            @* <button class="btn btn-primary btn-sm">View Details</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+@*<div class="container mt-5">
+    @foreach (var post in Model)
+    {
+        <div class="row border-bottom pb-3 mb-3">
+
+            <!-- Title -->
+            <div class="col-md-6">
+                <strong>Title:</strong> @post.Title
+            </div>
+            <!-- Description -->
+            <div class="col-md-12">
+                <strong>Description:</strong>
+                <p>@post.Description</p>
+            </div>
+            <!-- Author -->
+            <div class="col-md-6">
+                <strong>Author:</strong> @post.Author
+            </div>
+            <!-- Budget -->
+            <div class="col-md-6">
+                <strong>Budget:</strong> $@post.Budget
+            </div>
+            <!-- Created Date -->
+            <div class="col-md-12">
+                <strong>Created Date:</strong> @post.CreatedDate.ToString("yyyy-MM-dd HH:mm")
+            </div>
+            <div class="col-md-6">
+                <strong>ID: <a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-primary">View Details</a></strong>
+            </div>
+        </div>
+    }
+</div>
+*@
+
+@* <h1>All Project Posts</h1>
 
 
         @foreach (var project in Model)
@@ -17,3 +87,4 @@ else
 {
     <p>No projects found.</p>
 }
+*@

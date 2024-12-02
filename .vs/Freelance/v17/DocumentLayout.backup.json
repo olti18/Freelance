@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\oltib\\source\\repos\\Freelance\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\projectpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\models\\addprojectpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\models\\addprojectpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\views\\projectpost\\createproject.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\projectpost\\createproject.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\views\\projectpost\\getallprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\projectpost\\getallprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\models\\projectpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\models\\projectpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\source\\repos\\freelance\\freelance.ui\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,65 +55,119 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GetAllProjects.cshtml",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
-              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
-              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T10:35:10.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
-              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
-              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-02T10:33:41.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProjectPostController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\ProjectPostController.cs",
-              "RelativeDocumentMoniker": "Freelance.UI\\Controllers\\ProjectPostController.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\ProjectPostController.cs",
-              "RelativeToolTip": "Freelance.UI\\Controllers\\ProjectPostController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEsAAAAZAAAAAAAAAA==",
+              "Title": "AddProjectPostDto.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Models\\AddProjectPostDto.cs",
+              "RelativeDocumentMoniker": "Freelance.UI\\Models\\AddProjectPostDto.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Models\\AddProjectPostDto.cs",
+              "RelativeToolTip": "Freelance.UI\\Models\\AddProjectPostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T10:32:24.902Z",
+              "WhenOpened": "2024-12-02T22:33:30.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ProjectPostController.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\ProjectPostController.cs",
+              "RelativeDocumentMoniker": "Freelance.UI\\Controllers\\ProjectPostController.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\ProjectPostController.cs",
+              "RelativeToolTip": "Freelance.UI\\Controllers\\ProjectPostController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T10:32:24.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateProject.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\CreateProject.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\CreateProject.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\CreateProject.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\CreateProject.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T22:44:23.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectPostDto.cs",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Models\\ProjectPostDto.cs",
+              "RelativeDocumentMoniker": "Freelance.UI\\Models\\ProjectPostDto.cs",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Models\\ProjectPostDto.cs",
+              "RelativeToolTip": "Freelance.UI\\Models\\ProjectPostDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T22:46:10.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectPostController.cs",
               "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProjectPostController.cs",
               "RelativeDocumentMoniker": "Freelance\\Controllers\\ProjectPostController.cs",
-              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProjectPostController.cs",
-              "RelativeToolTip": "Freelance\\Controllers\\ProjectPostController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwEMAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance\\Controllers\\ProjectPostController.cs*",
+              "RelativeToolTip": "Freelance\\Controllers\\ProjectPostController.cs*",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwCEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T10:01:06.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T10:33:41.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAllProjects.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\GetAllProjects.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAACGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T10:35:10.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Freelance.UI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Freelance.UI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wDgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:55:03.509Z"
+              "WhenOpened": "2024-12-02T09:55:03.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\source\\repos\\Freelance\\Freelance.UI\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T21:29:50.927Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -30,9 +30,10 @@ namespace Freelance.Controllers
             this.projectPostRepository = projectPostRepository;
         }
 
-        [HttpPost("Create-Project-Post")]
+        //[HttpPost("Create-Project-Post")] po gjun erro qitu
+        [HttpPost]
         [Authorize]
-        [ValidateModel]
+        //[ValidateModel]
         public async Task<IActionResult> CreateAsync([FromBody] AddProjectPostDto addProjectPostDto)
         {
             var user = await userManager.GetUserAsync(User);

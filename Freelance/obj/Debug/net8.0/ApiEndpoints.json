@@ -69,6 +69,22 @@
   },
   {
     "ContainingType": "Freelance.Controllers.ProjectPostController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/ProjectPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addProjectPostDto",
+        "Type": "Freelance.Models.DTO.ProjectPostDTO.AddProjectPostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Freelance.Controllers.ProjectPostController",
     "Method": "GetAllProjects",
     "RelativePath": "api/ProjectPost",
     "HttpMethod": "GET",
@@ -109,22 +125,6 @@
       {
         "Name": "updateDto",
         "Type": "Freelance.Models.DTO.ProjectPostDTO.UpdateProjectPostRequestDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Freelance.Controllers.ProjectPostController",
-    "Method": "CreateAsync",
-    "RelativePath": "api/ProjectPost/Create-Project-Post",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "addProjectPostDto",
-        "Type": "Freelance.Models.DTO.ProjectPostDTO.AddProjectPostDto",
         "IsRequired": true
       }
     ],

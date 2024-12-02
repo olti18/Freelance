@@ -1,7 +1,31 @@
 ﻿@model IEnumerable<Freelance.UI.Models.ProjectPostDto>
 
 
-<h1>All Project Posts</h1>
+<div class="container mt-5">
+    <div class="row g-4">
+        @foreach (var project in Model)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@project.Title</h5>
+                        <p class="card-text text-muted">@project.Description.Substring(0, 100)...</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><strong>Author:</strong> @project.Author</li>
+                            <li><strong>Budget:</strong> $@project.Budget</li>
+                            <li><strong>Created Date:</strong> @project.CreatedDate.ToShortDateString()</li>
+                        </ul>
+                        <a href="@Url.Action("Details", "Projects", new { id = project.Id })" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+@* <h1>All Project Posts</h1>
 
 
         @foreach (var project in Model)
@@ -18,7 +42,7 @@ else
 {
     <p>No projects found.</p>
 }
-
+*@
 
 
 
