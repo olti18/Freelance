@@ -15,6 +15,37 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+/*builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowAllOrigins", builder =>
+	{
+		builder.AllowAnyOrigin()
+			   .AllowAnyMethod()
+			   .AllowAnyHeader();
+	});
+});
+
+//Mos e prel
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+	options.Configuration = "localhost:6379"; // Replace with your Redis server address
+	options.InstanceName = "MyAppRedisInstance";
+});*/
+
+/*builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.None;
+});*/
+
+builder.Services.AddAntiforgery(options =>
+{
+	options.Cookie.SecurePolicy = CookieSecurePolicy.Always;  // Ensure antiforgery cookies are secure
+	options.Cookie.SameSite = SameSiteMode.Lax;  // Allow cross-site cookies
+});
+//Mos e prek
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

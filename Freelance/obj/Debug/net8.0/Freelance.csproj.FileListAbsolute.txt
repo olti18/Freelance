@@ -354,3 +354,6 @@ C:\Users\oltib\Source\Repos\Freelance\Freelance\bin\Debug\net8.0\Freelance.stati
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets\msbuild.Freelance.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\oltib\Source\Repos\Freelance\Freelance\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\oltib\Source\Repos\Freelance\Freelance\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\oltib\Source\Repos\Freelance\Freelance\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\oltib\Source\Repos\Freelance\Freelance\bin\Debug\net8.0\StackExchange.Redis.dll

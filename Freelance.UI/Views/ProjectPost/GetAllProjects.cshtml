@@ -1,0 +1,46 @@
+﻿@model List<Freelance.UI.Models.ProjectPostDto>
+
+
+<h1>All Project Posts</h1>
+
+
+        @foreach (var project in Model)
+        {
+            <li>
+                <strong>@project.Title</strong><br />
+                <em>@project.Description</em><br />
+                <span>Author: @project.Author</span><br />
+                <span>Budget: @project.Budget</span><br />
+                <span>Created: @project.CreatedDate.ToShortDateString()</span>
+            </li>
+        }
+else
+{
+    <p>No projects found.</p>
+}
+
+
+
+
+@* <h1>All Projects</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Budget</th>
+            <th>Deadline</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Title</td>
+                <td>@project.Description</td>
+                <td>@project.Budget</td>
+            </tr>
+        }
+    </tbody>
+</table>*@

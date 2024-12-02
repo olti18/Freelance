@@ -47,7 +47,6 @@ namespace Freelance.Controllers
         }
 
         [HttpGet("Get-My-Projects")]
-        [Authorize]
         public async Task<IActionResult> GetMyProjects()
         {
 
@@ -62,8 +61,10 @@ namespace Freelance.Controllers
 
 			return Ok(projects);
 		}
+        
         [HttpGet]
-        public async Task<IActionResult> GetAllProjects()
+		[Authorize]
+		public async Task<IActionResult> GetAllProjects()
         {
             var projects = await projectPostRepository.GetProjectsAsync();
 
