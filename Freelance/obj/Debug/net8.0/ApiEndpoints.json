@@ -133,7 +133,7 @@
   {
     "ContainingType": "Freelance.Controllers.ProjectPostController",
     "Method": "GetMyProjects",
-    "RelativePath": "api/ProjectPost/Get-My-Projects",
+    "RelativePath": "api/ProjectPost/MyProjects",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

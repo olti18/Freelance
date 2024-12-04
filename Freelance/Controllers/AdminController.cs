@@ -41,9 +41,9 @@ namespace Freelance.Controllers
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteProjectProposal(Guid id)
 		{
-			// Fetch the ProjectPost with its Proposals
+			
 			var projectPost = await context.ProjectPosts
-				.Include(pp => pp.Proposals) // Ensure proposals are included
+				.Include(pp => pp.Proposals) 
 				.FirstOrDefaultAsync(pp => pp.Id == id);
 
 			if (projectPost == null)

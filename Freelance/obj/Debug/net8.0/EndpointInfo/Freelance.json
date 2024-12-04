@@ -155,7 +155,7 @@
         }
       }
     },
-    "/api/ProjectPost/Get-My-Projects": {
+    "/api/ProjectPost/MyProjects": {
       "get": {
         "tags": [
           "ProjectPost"

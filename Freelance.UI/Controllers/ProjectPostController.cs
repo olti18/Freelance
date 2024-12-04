@@ -46,6 +46,50 @@ namespace Freelance.UI.Controllers
 			return View(response);
 
 		}
+
+		//[HttpGet]
+		[HttpGet("Projects/MyProjects")]
+		public async Task<IActionResult> MyProjects()
+		{
+			List<MyProjectsPostDto> response = new List<MyProjectsPostDto>();
+
+		
+			var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+			if (string.IsNullOrEmpty(jwtToken))
+			{
+				return RedirectToAction("Login", "Auth"); 
+			}
+
+			try
+			{
+				
+				var client = _httpClientFactory.CreateClient();
+
+				
+				client.DefaultRequestHeaders.Authorization =
+					new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+				// Thirr API-n për të marrë projektet ************** Specifiko Routin************************
+				var responseMessage = await client.GetAsync("https://localhost:7086/api/ProjectPost/MyProjects");
+
+				// Kontrollo nëse përgjigja është e suksesshme
+				if (!responseMessage.IsSuccessStatusCode)
+				{
+					TempData["ErrorMessage"] = "Failed to load your projects. Please try again.";
+					return View(response); // Rikthe view me listë bosh
+				}
+
+				// Lexo të dhënat nga përgjigja
+				response = await responseMessage.Content.ReadFromJsonAsync<List<MyProjectsPostDto>>();
+			}
+			catch (Exception ex)
+			{
+				TempData["ErrorMessage"] = "An error occurred while loading your projects.";
+			}
+
+			return View(response);
+		}
+
 		[HttpGet]
 		public IActionResult CreateProject()
 		{
@@ -97,33 +141,10 @@ namespace Freelance.UI.Controllers
 			}
 		}
 
+		
 
-		/*[HttpPost]
-		public async Task<IActionResult> CreateProject(AddProjectPostDto model)
-		{
-			var jwtToken = HttpContext.Request.Cookies["JwtToken"];
-			if (string.IsNullOrEmpty(jwtToken))
-			{
-				return RedirectToAction("Login", "Auth"); // Redirect to login if no token
-			}
-			var client = _httpClientFactory.CreateClient();
-			client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
 
-			var httpRequestMessage = new HttpRequestMessage()
-			{
-				Method = HttpMethod.Post,
-				RequestUri = new Uri("https://localhost:7086/api/ProjectPost"),
-				//Content = new StringContent(jwtToken)
-				Content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json")
-			};
-			var httpResponseMessage = await client.SendAsync(httpRequestMessage);
-			httpResponseMessage.EnsureSuccessStatusCode();
-			 var response = await httpResponseMessage.Content.ReadFromJsonAsync<AddProjectPostDto>();
-			if(response is null)
-			{
-				return BadRequest();
-			}
-			return View(response);
-		}*/
+
+
 	}
 }

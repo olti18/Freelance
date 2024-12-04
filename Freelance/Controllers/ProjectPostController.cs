@@ -30,7 +30,7 @@ namespace Freelance.Controllers
             this.projectPostRepository = projectPostRepository;
         }
 
-        //[HttpPost("Create-Project-Post")] po gjun erro qitu
+        //[HttpPost("Create-Project-Post")] po gjun error qitu
         [HttpPost]
         [Authorize]
         //[ValidateModel]
@@ -47,8 +47,9 @@ namespace Freelance.Controllers
             return Ok(mapper.Map<ProjectPostDto>(projectPostDomainModel));
         }
 
-        [HttpGet("Get-My-Projects")]
-        public async Task<IActionResult> GetMyProjects()
+		//[HttpGet]
+		[HttpGet("MyProjects")]
+		public async Task<IActionResult> GetMyProjects()
         {
 
 			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;

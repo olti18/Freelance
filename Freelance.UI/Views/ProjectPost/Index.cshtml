@@ -1,5 +1,263 @@
 ﻿@model IEnumerable<Freelance.UI.Models.ProjectPostDto>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork-Style Grid/List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f9fafb;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #4caf50;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .header {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 0 15px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .card h2 {
+                font-size: 1.2rem;
+                color: #333;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+        .budget {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .btn-outline-primary {
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            background: #f1f1f1;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @@media (max-width: 768px) {
+            .header
+
+        {
+            font-size: 1.2rem;
+            padding: 15px 10px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section 
+    <div class="header">
+        <h1>Project Posts</h1>
+        <p>Find the perfect projects that suit your expertise</p>
+    </div>-->
+
+    <!-- Grid View -->
+    <div class="grid-container">
+        <!-- Card Item -->
+        @foreach (var post in Model)
+        {
+            <div class="card p-3">
+                <h2 class="card-title">@post.Author</h2>
+                <p class="card-text">
+                    <strong>Description:</strong> @post.Description<br>
+                    <strong>Budget:</strong> <span class="budget">@post.Budget</span><br>
+                    <strong>Date:</strong> @post.CreatedDate.ToString("yyyy-MM-dd HH:mm")
+                </p>
+                <a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-outline-primary btn-sm">View Details</a>
+            </div>
+        }
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork-Style Grid/List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+        background-color: #f9fafb;
+        }
+
+        .navbar {
+        background-color: #4caf50;
+        }
+
+        .navbar-brand {
+        font-size: 1.5rem;
+        color: white;
+        }
+
+        .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        }
+
+        .list-container {
+        margin-top: 20px;
+        }
+
+        .list-item {
+        border-bottom: 1px solid #dee2e6;
+        padding: 10px 0;
+        }
+
+        .list-item:last-child {
+        border-bottom: none;
+        }
+
+        .budget {
+        font-weight: bold;
+        color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+  
+        <h2 class="mb-3">Project Posts</h2>
+        <!-- Grid View -->
+        <div class="grid-container">
+            <!-- Card 1 -->
+            @foreach (var post in Model)
+            {
+                <div class="card p-3">
+                <h2 class="card-title">@post.Author</h2>
+                    <p class="card-text">
+                    <!--<strong>Author:</strong> <br>-->
+                     <strong>Description:</strong> <span class="budget">@post.Description</span><br>
+                        <strong>Budget:</strong> <span class="budget">@post.Budget</span><br>
+                        <strong>Date:</strong> <span class="Date">@post.CreatedDate.ToString("yyyy-MM-dd HH:mm")</span>
+                    </p>
+                <a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-outline-primary btn-sm">View Details</a> 
+                
+                </div>
+           
+            }
+        </div>
+      
+        <!-- Bootstrap Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> *@
+
+
+@*<div class="container mt-5">
+    <div class="row g-4">
+        @foreach (var post in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow" style="background-color: #ffffff; border: 2px solid #d1e7dd; border-radius: 15px;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #198754; font-weight: bold;">@post.Title</h5>
+                        <p class="card-text" style="color: #6c757d; font-size: 0.9rem;">
+                            <strong style="color: #198754;">Description:</strong> @post.Description
+                        </p>
+                        <p class="card-text" style="font-size: 0.9rem;">
+                            <strong style="color: #198754;">Author:</strong> <span style="color: #20c997;">@post.Author</span>
+                        </p>
+                        <p class="card-text" style="font-size: 0.9rem;">
+                            <strong style="color: #198754;">Budget:</strong> <span style="color: #dc3545;">$@post.Budget</span>
+                        </p>
+                        <p class="card-text" style="color: #6c757d; font-size: 0.8rem;">
+                            <strong style="color: #198754;">Created:</strong> @post.CreatedDate.ToString("yyyy-MM-dd HH:mm")
+                        </p>
+                        <div class="text-end">
+                            <a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn" style="background-color: #198754; color: #ffffff; border-radius: 25px; font-weight: bold;">
+                                Make a Proposal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+*@
+
+
+
+
+
+
+
+
+@*@model IEnumerable<Freelance.UI.Models.ProjectPostDto>
+
 
 
 
@@ -25,7 +283,7 @@
                         </p>
                         <div class="text-end">
                             <strong><a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-primary">Make a Proposal</a></strong>
-                            @* <button class="btn btn-primary btn-sm">View Details</button>*@
+                            
                         </div>
                     </div>
                 </div>
@@ -33,7 +291,7 @@
         }
     </div>
 </div>
-
+*@
 
 
 @*<div class="container mt-5">
