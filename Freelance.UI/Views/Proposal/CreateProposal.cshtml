@@ -1,0 +1,20 @@
+﻿@model AddProposalDto
+
+<div class="container mt-5">
+    <h1>Create Proposal</h1>
+    <p>Submit your proposal for the project.</p>
+
+    <form asp-action="SubmitProposal" method="post">
+        <input type="hidden" name="ProjectPostId" value="@Model.ProjectPostId" />
+        <div class="mb-3">
+            <label for="Content" class="form-label">Proposal Content</label>
+            <textarea class="form-control" id="Content" name="Content" rows="5" required>@Model.Content</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="ProposedAmount" class="form-label">Proposed Amount</label>
+            <input type="number" class="form-control" id="ProposedAmount" name="ProposedAmount" step="0.01" value="@Model.ProposedAmount" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Proposal</button>
+        <a href="@Url.Action("Index", "ProjectPost")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

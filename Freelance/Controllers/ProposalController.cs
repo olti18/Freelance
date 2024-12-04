@@ -30,6 +30,7 @@ namespace Freelance.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
 		public async Task<IActionResult> CreateProposalAsync (AddProposalDto addProposalDto)
 		{
 			if (addProposalDto == null)	

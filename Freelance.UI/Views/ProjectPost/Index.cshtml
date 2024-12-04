@@ -112,7 +112,8 @@
                     <strong>Budget:</strong> <span class="budget">@post.Budget</span><br>
                     <strong>Date:</strong> @post.CreatedDate.ToString("yyyy-MM-dd HH:mm")
                 </p>
-                <a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-outline-primary btn-sm">View Details</a>
+                @*<a href="@Url.Action("Details", "Projects", new { id = post.Id })" class="btn btn-outline-primary btn-sm">View Details</a>*@
+                <a href="@Url.Action("CreateProposal", "Proposal", new { projectPostId = post.Id })" class="btn btn-outline-primary btn-sm">Propose</a>
             </div>
         }
     </div>
