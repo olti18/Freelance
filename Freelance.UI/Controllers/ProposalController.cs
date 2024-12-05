@@ -12,13 +12,11 @@ namespace Freelance.UI.Controllers
 				_httpClientFactory = httpClientFactory;
 			}
 
-
-
-				// Show the Create Proposal page
+			// Show the Create Proposal page
 			[HttpGet]
 			public IActionResult CreateProposal(Guid projectPostId)
 			{
-					// Pass the project ID to the view
+				// Pass the project ID to the view
 				var model = new AddProposalDto
 				{
 					ProjectPostId = projectPostId
@@ -39,7 +37,7 @@ namespace Freelance.UI.Controllers
 
 				client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
 
-			if (proposalDto == null || string.IsNullOrEmpty(proposalDto.Content) || proposalDto.ProposedAmount <= 0)
+				if (proposalDto == null || string.IsNullOrEmpty(proposalDto.Content) || proposalDto.ProposedAmount <= 0)
 				{
 					TempData["Error"] = "All fields are required.";
 					return View("CreateProposal", proposalDto);
@@ -48,13 +46,12 @@ namespace Freelance.UI.Controllers
 				try
 				{
 					
-
 					var response = await client.PostAsJsonAsync("https://localhost:7086/api/Proposal", proposalDto);
 
 					if (response.IsSuccessStatusCode)
 					{
 						TempData["Success"] = "Proposal created successfully!";
-						return RedirectToAction("Index", "Projects");
+						return RedirectToAction("Index", "Projectpost");
 					}
 					else
 					{
@@ -68,6 +65,7 @@ namespace Freelance.UI.Controllers
 						TempData["Error"] = $"An error occurred: {ex.Message}";
 						return View("CreateProposal", proposalDto);
 					}
+
 				}
 			}
 		

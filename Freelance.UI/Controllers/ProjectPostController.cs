@@ -15,7 +15,6 @@ namespace Freelance.UI.Controllers
 			this._httpClientFactory = _httpClientFactory;
 		}
 
-
 		[HttpGet]
 		public async Task<IActionResult> Index()
 		{
@@ -39,13 +38,16 @@ namespace Freelance.UI.Controllers
 				httpResonseMessage.EnsureSuccessStatusCode();
 
 				response.AddRange(await httpResonseMessage.Content.ReadFromJsonAsync<IEnumerable<ProjectPostDto>>());
-			} catch (Exception ex)
+			}
+			catch (Exception ex)
 			{
 
 			}
+
 			return View(response);
 
 		}
+
 
 		//[HttpGet]
 		[HttpGet("Projects/MyProjects")]
@@ -131,8 +133,8 @@ namespace Freelance.UI.Controllers
 				{
 					return BadRequest("Failed to create project post.");
 				}
-
-				return View(response);
+				return RedirectToAction("index", "ProjectPost");
+				//return View(response);
 			}
 			catch (HttpRequestException ex)
 			{

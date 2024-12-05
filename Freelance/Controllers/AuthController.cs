@@ -1,9 +1,11 @@
-﻿using Freelance.Models.DTO;
+﻿using Freelance.Data;
+using Freelance.Models.DTO;
 using Freelance.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Freelance.Controllers
 {
@@ -13,41 +15,49 @@ namespace Freelance.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly ITokenRepository tokenRepository;
-        public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
+		private readonly FreelanceDbContext context;
+		public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository, FreelanceDbContext context)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
+            this.context = context;
         }
 
-        [HttpPost]
-        [Route("Register")]
-        public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
-        {
-            var identityUser = new IdentityUser
-            {
-                UserName = registerRequestDto.UserName,
-                Email = registerRequestDto.UserName
-            };
+		[HttpPost]
+		[Route("Register")]
+		public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
+		{
+			var identityUser = new IdentityUser
+			{
+				UserName = registerRequestDto.UserName,
+				Email = registerRequestDto.UserName
+			};
 
-            var identityResult = await userManager.CreateAsync(identityUser, registerRequestDto.Password);
+			var identityResult = await userManager.CreateAsync(identityUser, registerRequestDto.Password);
 
-            if (identityResult.Succeeded)
-            {
-                //Add roles to this user
-                if (registerRequestDto.Roles != null && registerRequestDto.Roles.Any())
-                {
-                    identityResult = await userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);
+			if (identityResult.Succeeded)
+			{
+				// Add role to this user
+				if (!string.IsNullOrWhiteSpace(registerRequestDto.Role))
+				{
+					identityResult = await userManager.AddToRoleAsync(identityUser, registerRequestDto.Role);
 
-                    if (identityResult.Succeeded)
-                    {
-                        return Ok("User was Registerd! Please Login.");
-                    }
-                }
-            }
-            return BadRequest("Something went wrong!!");
-        }
-                                                            
-        [HttpPost]
+					if (identityResult.Succeeded)
+					{
+						return Ok("User was registered! Please log in.");
+					}
+				}
+				else
+				{
+					return BadRequest("Role is required.");
+				}
+			}
+
+			return BadRequest("Something went wrong!");
+		}
+
+        
+		[HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
         {
@@ -77,7 +87,7 @@ namespace Freelance.Controllers
                 }
             }
             return BadRequest("Username or Password incorrect");
-        }
+        }   
 
         [HttpGet("Get the user who is loged in")]
         [Authorize(Roles = "Admin")]

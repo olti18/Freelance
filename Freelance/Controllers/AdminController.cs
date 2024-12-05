@@ -63,7 +63,26 @@ namespace Freelance.Controllers
 			return Ok("The project was removed successfully");
 		}
 
+		[HttpGet("DashboardStats")]
+		public async Task<IActionResult> DashboardStats()
+		{
+			var totalProjects = await context.ProjectPosts.CountAsync();
+			var totalUsers = await context.Users.CountAsync();
+			//var totalAdmins = await context.Users.CountAsync(u => u.Role == "Admin");
+			//var totalRegularUsers = await context.Users.CountAsync(u => u.Role == "User");
+			var totalProposals = await context.Proposals.CountAsync();
+			var totalRating = await context.Ratings.CountAsync();
 
+			return Ok(new
+			{
+				TotalProjects = totalProjects,
+				TotalUsers = totalUsers,
+				TotalRating = totalRating,
+				//TotalAdmins = totalAdmins,
+				//TotalRegularUsers = totalRegularUsers,
+				TotalProposals = totalProposals
+			});
+		}
 
 	}
 }

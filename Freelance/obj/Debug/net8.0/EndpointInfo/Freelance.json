@@ -40,6 +40,18 @@
         }
       }
     },
+    "/api/Admin/DashboardStats": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auth/Register": {
       "post": {
         "tags": [
@@ -541,11 +553,8 @@
             "type": "string",
             "format": "password"
           },
-          "roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
+          "role": {
+            "type": "string",
             "nullable": true
           }
         },

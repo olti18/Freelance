@@ -26,6 +26,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Freelance.Controllers.AdminController",
+    "Method": "DashboardStats",
+    "RelativePath": "api/Admin/DashboardStats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Freelance.Controllers.AuthController",
     "Method": "GetUserId",
     "RelativePath": "api/Auth/Get the user who is loged in",

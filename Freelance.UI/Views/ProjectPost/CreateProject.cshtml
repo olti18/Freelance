@@ -10,8 +10,14 @@
     <form  method="post" class="needs-validation" novalidate>
         <div class="mb-3">
             <label for="Title" class="form-label">Title</label>
-            <input asp-for="Title" class="form-control" id="Title" placeholder="Enter project title" />
+            <input asp-for="Title" class="form-control" id="Title" placeholder="Enter Title" />
             <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Title" class="form-label">Title</label>
+            <input asp-for="Author" class="form-control" id="Title" placeholder="Enter Author" />
+            <span asp-validation-for="Author" class="text-danger"></span>
         </div>
         
         <div class="mb-3">
@@ -25,11 +31,11 @@
             <input asp-for="Budget" type="number" class="form-control" id="Budget" placeholder="Enter budget" />
             <span asp-validation-for="Budget" class="text-danger"></span>
         </div>
-        <div class="mb-3">
+        @*<div class="mb-3">
             <label for="Author" class="form-label">Description</label>
             <textarea asp-for="Author" class="form-control" id="Description" rows="3" placeholder="Enter project description"></textarea>
             <span asp-validation-for="Author" class="text-danger"></span>
-        </div>
+        </div>*@
 
   
         

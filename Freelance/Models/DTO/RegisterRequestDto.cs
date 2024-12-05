@@ -10,7 +10,7 @@ namespace Freelance.Models.DTO
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        public string[] Roles { get; set; }
+		public string Role { get; set; } // Single role instead of a list
+		//public string[] Roles { get; set; }
     }
 }

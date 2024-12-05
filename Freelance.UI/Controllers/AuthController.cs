@@ -64,13 +64,50 @@ namespace Freelance.UI.Controllers
 					Expires = DateTimeOffset.UtcNow.AddHours(1)
 				});
 
-			
-				return RedirectToAction("Index", "Home");
+
+				//return RedirectToAction("Index", "Home");
+				return RedirectToAction("index", "ProjectPost");
 			}
 
 			ModelState.AddModelError("", "Invalid username or password.");
 			return View(model);
 		}
-		
+
+
+		[HttpGet]
+		public IActionResult Register()
+		{
+
+			return View();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Register(RegisterRequestDto model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			var httpClient = _httpClientFactory.CreateClient();
+
+			var jsonContent = JsonSerializer.Serialize(model);
+			var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+			var response = await httpClient.PostAsync("https://localhost:7086/api/Auth/Register", content);
+
+			if (response.IsSuccessStatusCode)
+			{
+				TempData["Message"] = "Registration successful! Please log in.";
+				return RedirectToAction("Login");
+			}
+
+			ModelState.AddModelError("", "Registration failed. Please try again.");
+			return View(model);
+		}
+
+	
+
+
 	}
 }

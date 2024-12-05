@@ -20,7 +20,6 @@ namespace Freelance.Repositories
             {
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
-
             };
 
             foreach (var role in roles)
