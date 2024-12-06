@@ -65,17 +65,9 @@ namespace Freelance.Controllers
 
 		}
 
-		/*[HttpGet]	
-		public async Task<IActionResult> GetMyProposalAsync()
-		{
-			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is used
-
-			var proposals = await proposalRepository.GetMyProposalAsync(userId);
-
-			return Ok(proposals);
-		}
-		*/
-		[HttpGet]
+		
+		[HttpGet("GetAllProposals")]
+		[Authorize]
 		public async Task<IActionResult> GetAllProposals()
 		{
 			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value; // or User.FindFirstValue(ClaimTypes.NameIdentifier) if NameIdentifier is 
@@ -107,21 +99,7 @@ namespace Freelance.Controllers
 			return Ok(projectsWithProposals);
 		}
 
-		/*[HttpGet("{id}")]
-		public async Task<ActionResult> GetProposalAsync(Guid id)
-		{
-			var proposal = await _appDbContext.Proposals.FindAsync(id);
-
-			if (proposal == null)
-			{
-				return NotFound();
-			}
-
-			// Map the proposal to ProposalDto using AutoMapper
-			var proposalDto = _mapper.Map<ProposalDto>(proposal);
-
-			return Ok(proposalDto);
-		}*/
+		
 
 		[HttpPut("{id}")]
 		public async Task<IActionResult> UpdateProposal(Guid id, [FromBody] UpdateProposalDto updateProposalDto)

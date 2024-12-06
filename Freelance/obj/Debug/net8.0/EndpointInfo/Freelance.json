@@ -271,7 +271,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Proposal/GetAllProposals": {
       "get": {
         "tags": [
           "Proposal"

@@ -8,10 +8,7 @@ namespace Freelance.Data
 {
     public class FreelanceDbContext : IdentityDbContext
     {
-        public FreelanceDbContext(DbContextOptions<FreelanceDbContext> options) : base(options)
-        {
-
-        }
+        public FreelanceDbContext(DbContextOptions<FreelanceDbContext> options) : base(options){}
         public DbSet<ProjectPost> ProjectPosts { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
 		public DbSet<Rating> Ratings { get; set; }
@@ -19,7 +16,7 @@ namespace Freelance.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(builder);	
 
 			// Rating -> User (Freelancer)
 			builder.Entity<Rating>()
@@ -71,7 +68,7 @@ namespace Freelance.Data
             var roles = new List<IdentityRole>
             {
 
-
+					
                 new IdentityRole
                 {
                     Id = adminRoleId,

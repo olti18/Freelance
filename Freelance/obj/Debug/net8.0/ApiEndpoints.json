@@ -168,16 +168,6 @@
   },
   {
     "ContainingType": "Freelance.Controllers.ProposalController",
-    "Method": "GetAllProposals",
-    "RelativePath": "api/Proposal",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Freelance.Controllers.ProposalController",
     "Method": "UpdateProposal",
     "RelativePath": "api/Proposal/{id}",
     "HttpMethod": "PUT",
@@ -227,6 +217,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Freelance.Controllers.ProposalController",
+    "Method": "GetAllProposals",
+    "RelativePath": "api/Proposal/GetAllProposals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
