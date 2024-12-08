@@ -1,6 +1,211 @@
 ﻿@model Freelance.UI.Models.LoginRequestDto
 
-<section class="vh-100">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            background: linear-gradient( 135deg, #e9f5eb, #c9e4ca ); /* Subtle gradient background */
+            font-family: "Arial", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #495057;
+        }
+
+        .login-container {
+            background: #fff; /* White card */
+            border-radius: 15px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+        }
+
+            .login-container::before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 30px;
+                height: 30px;
+                background: linear-gradient(135deg, #28a745, #218838);
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            .login-container::after {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                right: -15px;
+                width: 30px;
+                height: 30px;
+                background: linear-gradient(135deg, #218838, #28a745);
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            .login-container h3 {
+                font-weight: bold;
+                color: #28a745;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+        .form-control {
+            border-radius: 30px;
+            border: 1px solid #28a745;
+            padding: 0.7rem 1.2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: #218838;
+                box-shadow: 0 0 6px rgba(33, 136, 56, 0.5);
+            }
+
+            .form-control::placeholder {
+                color: #bbb;
+            }
+
+        .btn-green {
+            background: linear-gradient(135deg, #28a745, #218838);
+            border: none;
+            color: #fff;
+            padding: 0.7rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+            .btn-green:hover {
+                background: linear-gradient(135deg, #218838, #28a745);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+            .social-login button {
+                border: none;
+                background: #fff;
+                color: #28a745;
+                border: 1px solid #28a745;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+                font-size: 1.2rem;
+            }
+
+                .social-login button:hover {
+                    background-color: #28a745;
+                    color: #fff;
+                    transform: scale(1.1);
+                }
+
+        .text-small {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 1rem;
+            color: #495057;
+        }
+
+            .text-small a {
+                color: #28a745;
+                text-decoration: none;
+            }
+
+                .text-small a:hover {
+                    text-decoration: underline;
+                }
+
+        .animated-icon {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #28a745, #218838);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            animation: bounce 1.5s infinite;
+        }
+        @@keyframes bounce {
+            0%, 100%
+
+        {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Animated Icon -->
+        <div class="animated-icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h3>Login to Your Account</h3>
+        <form asp-action="Login" method="post" >
+            <input asp-for="Username" 
+                type="email"
+                   class="form-control"
+                   placeholder="Email Address"
+                   required />
+            <input asp-for="Password"
+                   type="password"
+                   class="form-control"
+                   placeholder="Password"
+                   required />
+            <button type="submit" class="btn btn-green">Login</button>
+        </form>
+        <div class="text-small">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+        <div class="social-login">
+            <button><i class="fab fa-facebook-f"></i></button>
+            <button><i class="fab fa-google"></i></button>
+            <button><i class="fab fa-linkedin-in"></i></button>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+@*<section class="vh-100">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
@@ -73,4 +278,4 @@
     }
 
     }
-</style>
+</style>*@

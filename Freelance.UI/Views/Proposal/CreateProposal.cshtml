@@ -1,6 +1,229 @@
 ﻿@model AddProposalDto
 
-<div class="container mt-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crate Proposal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #c9e4ca, #e9f5eb);
+            font-family: "Arial", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 1rem;
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+            .info-section h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .info-section p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.5;
+            }
+
+            .info-section i {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+        .form-container {
+            background: linear-gradient(135deg, #ffffff, #f9fcfa);
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .form-container::before {
+                content: "";
+                position: absolute;
+                top: -60px;
+                left: -60px;
+                width: 120px;
+                height: 120px;
+                background: rgba(40, 167, 69, 0.1);
+                border-radius: 50%;
+                z-index: 0;
+            }
+
+            .form-container::after {
+                content: "";
+                position: absolute;
+                bottom: -60px;
+                right: -60px;
+                width: 120px;
+                height: 120px;
+                background: rgba(40, 167, 69, 0.1);
+                border-radius: 50%;
+                z-index: 0;
+            }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+            .header h3 {
+                font-weight: bold;
+                color: #28a745;
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                color: #6c757d;
+                font-size: 0.9rem;
+                margin-top: 0.3rem;
+            }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.2rem;
+            z-index: 1;
+        }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+                padding: 0.8rem 1rem 0.8rem 2.5rem;
+                font-size: 0.95rem;
+                background: #f8f9fa;
+                box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .form-group textarea {
+                height: 120px;
+                resize: none;
+            }
+
+                .form-group input:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    border: 2px solid transparent;
+                    background: linear-gradient(135deg, #f8f9fa, #f8f9fa) padding-box, linear-gradient(135deg, #28a745, #218838) border-box;
+                }
+
+            .form-group i {
+                position: absolute;
+                top: 50%;
+                left: 0.8rem;
+                transform: translateY(-50%);
+                color: #28a745;
+                font-size: 1.2rem;
+            }
+
+        .btn-create {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #28a745, #218838);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(40, 167, 69, 0.2);
+            transition: all 0.3s ease;
+        }
+
+            .btn-create:hover {
+                background: linear-gradient(135deg, #218838, #28a745);
+                box-shadow: 0px 6px 12px rgba(40, 167, 69, 0.3);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-section">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Make Your Idea Shine</h3>
+            <p>
+                Every great proposal starts with a clear vision. Outline your goals,
+                explain your ideas, and highlight what makes your proposal unique.
+            </p>
+            <p>
+                Use this form to present your best ideas and get them approved for
+                success!
+            </p>
+        </div>
+        <div class="form-container">
+            <div class="header">
+                <h3>Crate Proposal</h3>
+                <p>Provide the details for your proposal</p>
+            </div>
+            <form asp-action="SubmitProposal" method="post" id="proposal-form">
+                <div class="form-group">
+                    <i class="fas fa-align-left"></i>
+                    <textarea placeholder="Proposal Content"
+                              rows="6"
+                              required>@Model.Content</textarea>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-dollar-sign"></i>
+                    <input type="number" placeholder="@Model.ProposedAmount" required />
+                </div>
+                <button type="submit" class="btn-create">Submit Proposal</button>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+@*<div class="container mt-5">
     <h1>Create Proposal</h1>
     <p>Submit your proposal for the project.</p>
 
@@ -17,4 +240,4 @@
         <button type="submit" class="btn btn-primary">Submit Proposal</button>
         <a href="@Url.Action("Index", "ProjectPost")" class="btn btn-secondary">Cancel</a>
     </form>
-</div>
+</div>*@

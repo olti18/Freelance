@@ -1,6 +1,202 @@
 ﻿@model DashboardStatsDto
 
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #e9f5eb; /* Soft green background */
+            font-family: "Arial", sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #28a745;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+            .navbar-brand:hover {
+                color: #f0fff4;
+            }
+
+        /* Dashboard */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        /* Statistics Cards */
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            flex: 1;
+            background-color: #ffffff;
+            border: 1px solid #28a745;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .stat-card h3 {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #28a745;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-card p {
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: #495057;
+            }
+
+        /* Bar Chart */
+        .chart-container {
+            background-color: #ffffff;
+            border: 1px solid #28a745;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .chart-container h4 {
+                text-align: center;
+                color: #28a745;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard-container">
+        <!-- Statistics -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 id="totalProjects">0</h3>
+                <p>Total Projects</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalUsers">0</h3>
+                <p>Total Users</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalRatings">0</h3>
+                <p>Total Ratings</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalProposals">0</h3>
+                <p>Total Proposals</p>
+            </div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="chart-container">
+            <h4>Overview of Metrics</h4>
+            <canvas id="metricsChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Replace these values with data fetched from your backend
+        const data = {
+            totalProjects: 45,
+            totalUsers: 1234,
+            totalRatings: 789,
+            totalProposals: 56,
+        };
+
+        // Update statistics cards
+        document.getElementById('totalProjects').innerText = data.totalProjects;
+        document.getElementById('totalUsers').innerText = data.totalUsers;
+        document.getElementById('totalRatings').innerText = data.totalRatings;
+        document.getElementById('totalProposals').innerText = data.totalProposals;
+
+        // Bar chart configuration
+        const ctx = document.getElementById('metricsChart').getContext('2d');
+        const metricsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Projects', 'Total Users', 'Total Ratings', 'Total Proposals'],
+                datasets: [{
+                    label: 'Metrics',
+                    data: [
+                        @Model.TotalUsers,
+                        @Model.TotalProjects,
+                        @Model.TotalProposals,
+                        @Model.TotalRating
+                    ],
+                    backgroundColor: [
+                        '#28a745',
+                        '#34ce57',
+                        '#218838',
+                        '#6c757d'
+                    ],
+                    borderColor: '#218838',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +208,7 @@
         body {
             background-color: #f8f9fa;
         }
-        @*.navbar {
-            background: linear-gradient(90deg, #007bff, #6610f2);
-            color: white;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            color: white;
-        }*@
+       
         .card {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -144,6 +333,10 @@
     </script>
 </body>
 </html>
+*@
+
+
+
 
 
 @*
