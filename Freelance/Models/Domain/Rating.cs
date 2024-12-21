@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
 namespace Freelance.Models.Domain
-{
+{	
 	public class Rating
 	{
 		public Guid RatingId { get; set; } // Primary key

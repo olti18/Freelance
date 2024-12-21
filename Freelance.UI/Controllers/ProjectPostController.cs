@@ -145,9 +145,42 @@ namespace Freelance.UI.Controllers
 			}
 		}
 
-		
 
 
+		[HttpPost("Projects/MyProjects/Delete")]
+		public async Task<IActionResult> DeleteProject(Guid id)
+		{
+			var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+			if (string.IsNullOrEmpty(jwtToken))
+			{
+				TempData["ErrorMessage"] = "You need to log in to perform this action.";
+				return RedirectToAction("Login", "Auth");
+			}
+
+			try
+			{
+				var client = _httpClientFactory.CreateClient();
+				client.DefaultRequestHeaders.Authorization =
+					new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+				var response = await client.DeleteAsync($"https://localhost:7086/api/ProjectPost/MyProjects/{id}");
+
+				if (response.IsSuccessStatusCode)
+				{
+					TempData["SuccessMessage"] = "Project deleted successfully.";
+				}
+				else
+				{
+					TempData["ErrorMessage"] = "Failed to delete the project. Please try again.";
+				}
+			}
+			catch (Exception ex)
+			{
+				TempData["ErrorMessage"] = "An error occurred while deleting the project.";
+			}
+
+			return RedirectToAction("MyProjects");
+		}
 
 
 	}

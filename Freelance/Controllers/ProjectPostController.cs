@@ -72,8 +72,9 @@ namespace Freelance.Controllers
 
             return Ok(projects);
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
+        //[HttpDelete("{id}")]
+		[HttpDelete("MyProjects/{id}")]
+		public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
         {
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
@@ -92,7 +93,6 @@ namespace Freelance.Controllers
             }
 
             await projectPostRepository.DeleteAsync(id);
-            //return Ok(projectPost);
             return Ok(mapper.Map<ProjectPostDto>(projectPost));
 
         }

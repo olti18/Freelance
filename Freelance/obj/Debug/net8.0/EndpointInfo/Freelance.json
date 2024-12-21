@@ -179,7 +179,7 @@
         }
       }
     },
-    "/api/ProjectPost/{id}": {
+    "/api/ProjectPost/MyProjects/{id}": {
       "delete": {
         "tags": [
           "ProjectPost"
@@ -200,7 +200,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/ProjectPost/{id}": {
       "put": {
         "tags": [
           "ProjectPost"

@@ -105,22 +105,6 @@
   },
   {
     "ContainingType": "Freelance.Controllers.ProjectPostController",
-    "Method": "DeleteAsync",
-    "RelativePath": "api/ProjectPost/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Freelance.Controllers.ProjectPostController",
     "Method": "UpdateAsync",
     "RelativePath": "api/ProjectPost/{id}",
     "HttpMethod": "PUT",
@@ -148,6 +132,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Freelance.Controllers.ProjectPostController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/ProjectPost/MyProjects/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
