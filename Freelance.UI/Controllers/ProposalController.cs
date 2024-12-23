@@ -82,6 +82,21 @@ namespace Freelance.UI.Controllers
 
 			client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
 
+			if (string.IsNullOrEmpty(proposalDto.Content))
+			{
+				Console.WriteLine("Content is missing.");
+			}
+
+			if (proposalDto.ProposedAmount <= 0)
+			{
+				Console.WriteLine("ProposedAmount is invalid or missing.");
+			}
+
+			if (proposalDto == null)
+			{
+				Console.WriteLine("proposal is invalid or missing.");
+			}
+
 			if (proposalDto == null || string.IsNullOrEmpty(proposalDto.Content) || proposalDto.ProposedAmount <= 0)
 			{
 				TempData["Error"] = "All fields are required.";

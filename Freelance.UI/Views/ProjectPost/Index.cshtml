@@ -249,6 +249,9 @@
                         <a class="nav-link" asp-controller="ProjectPost" asp-action="createproject">Create Project</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" asp-controller="Proposalss" asp-action="MyProposalss">See Proposals</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="btn btn-navbar-login" asp-controller="Auth" asp-action="Login">Login</a>
                     </li>
                 </ul>
@@ -271,6 +274,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <span>Budget: @post.Budget</span>
                         <a href="@Url.Action("CreateProposal", "Proposal", new { projectPostId = post.Id })" class="btn btn-green">Propose</a>
+   
                     </div>
                 </div>
             }
