@@ -130,7 +130,7 @@ namespace Freelance.Controllers
 		}
 
 		[HttpPost("accept-proposal/{proposalId}")]
-		//[Authorize(Roles = "Client")]
+		
 		public async Task<IActionResult> AcceptProposal(Guid proposalId)
 		{
 			// Retrieve the proposal and associated ProjectPost

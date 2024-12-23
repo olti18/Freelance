@@ -1,5 +1,96 @@
-﻿
+﻿@*@model List<MyProjectsPostDto>
 
+<h2>My Projects</h2>
+
+@foreach (var project in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@project.Title</h5>
+            <p class="card-text">@project.Description</p>
+            <p><strong>Budget:</strong> $@project.Budget</p>
+            
+
+            <h6>Proposals:</h6>
+            @if (project.Proposals.Any())
+            {
+                <ul>
+                    @foreach (var proposal in project.Proposals)
+                    {
+                        <li>
+                            <strong>@proposal.FreelancerName</strong> - $@proposal.ProposedAmount
+                            <br />
+                            <em>@proposal.Content</em> (Submitted: @proposal.SubmittedDate.ToShortDateString())
+                            @if (!proposal.IsSelected)
+                            {
+                                <form asp-action="AcceptProposal" asp-controller="Projects" method="post" style="display:inline;">
+                                    <input type="hidden" name="proposalId" value="@proposal.ProposalId" />
+                                    <button type="submit" class="btn btn-success btn-sm">Accept Proposal</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="text-success">Accepted</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No proposals yet.</p>
+            }
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+@model List<MyProjectsPostDto>
+
+<h2>My Projects</h2>
+
+
+@foreach (var project in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@project.Title</h5>
+            <p class="card-text">@project.Description</p>
+            <p><strong>Budget:</strong> $@project.Budget</p>
+
+
+            <h6>Proposals:</h6>
+            <ul>
+                @foreach (var proposal in project.Proposals)
+                {
+                    <li>
+                        @proposal.FreelancerName - $@proposal.Budget
+                        @if (!proposal.IsSelected)
+                        {
+                            <form asp-action="AcceptProposal" asp-controller="Projects" method="post" style="display:inline;">
+                                <input type="hidden" name="proposalId" value="@proposal.ProposalId" />
+                                <button type="submit" class="btn btn-success btn-sm">Accept Proposal</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span class="text-success">Accepted</span>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}*@
 
 
 

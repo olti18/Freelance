@@ -8,5 +8,7 @@
 		public string Author { get; set; }
 		public double Budget { get; set; }
 		public DateTime CreatedDate { get; set; } = DateTime.Now;
+		//
+		public List<ProposalDto> Proposals { get; set; } = new();
 	}
 }

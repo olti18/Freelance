@@ -183,5 +183,48 @@ namespace Freelance.UI.Controllers
 		}
 
 
+
+		//[HttpPost("Projects/AcceptProposal/{proposalId}")]
+		//public async Task<IActionResult> AcceptProposal(Guid proposalId)
+		//{
+		//	// Retrieve JWT token from cookies
+		//	var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+		//	if (string.IsNullOrEmpty(jwtToken))
+		//	{
+		//		return RedirectToAction("Login", "Auth");
+		//	}
+
+		//	try
+		//	{
+		//		// Create HttpClient instance
+		//		var client = _httpClientFactory.CreateClient();
+
+		//		// Attach JWT Token in Authorization Header
+		//		client.DefaultRequestHeaders.Authorization =
+		//			new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+		//		// Send POST request to AcceptProposal endpoint
+		//		var responseMessage = await client.PostAsync($"https://localhost:7086/api/ProjectPost/accept-proposal/{proposalId}", null);
+
+		//		// Check response status
+		//		if (!responseMessage.IsSuccessStatusCode)
+		//		{
+		//			TempData["ErrorMessage"] = "Failed to accept the proposal. Please try again.";
+		//		}
+		//		else
+		//		{
+		//			TempData["SuccessMessage"] = "Proposal accepted successfully.";
+		//		}
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		TempData["ErrorMessage"] = "An error occurred while accepting the proposal.";
+		//	}
+
+		//	// Redirect back to MyProjects
+		//	return RedirectToAction("MyProjects");
+		//}
+
+
 	}
 }
