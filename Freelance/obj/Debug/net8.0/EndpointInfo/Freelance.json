@@ -505,10 +505,6 @@
             "type": "string",
             "format": "uuid"
           },
-          "userId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "score": {
             "type": "integer",
             "format": "int32"

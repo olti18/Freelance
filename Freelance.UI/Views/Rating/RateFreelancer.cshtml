@@ -1,0 +1,21 @@
+﻿@model AddRatingDto
+
+<h2>Rate Freelancer</h2>
+
+<form asp-action="SubmitRating" method="post">
+    <input type="hidden" asp-for="ProjectPostId" />
+    <input type="hidden" asp-for="ProposalId" />
+    @*  <input type="hidden" asp-for="UserId" />*@
+
+    <div class="form-group">
+        <label for="RatingValue">Rating (1-5):</label>
+        <input type="number" id="RatingValue" name="RatingValue" class="form-control" min="1" max="5" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Comments">Comments:</label>
+        <textarea id="Comments" name="Comments" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

@@ -59,7 +59,24 @@
                                     </form>
                                    // <a asp-action="AcceptMyProposal" asp-route-proposalId=@proposal.ProposalId">Prano Propozimin</a>
 
+                                }@if (proposal.IsSelected)
+                                {
+                                    <form method="post" action="/Proposalss/RateFreelancer" class="rating-form">
+                                        <input type="hidden" name="ProjectPostId" value="@project.ProjectId" />
+                                        <input type="hidden" name="ProposalId" value="@proposal.ProposalId" />
+                                        <div class="form-group">
+                                            <label for="Score">Score (1-5):</label>
+                                            <input type="number" name="Score" min="1" max="5" class="form-control" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Comment">Comment:</label>
+                                            <textarea name="Comment" class="form-control" placeholder="Optional feedback"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-sm">Submit Rating</button>
+                                    </form>
                                 }
+
+
                             </li>
                         }
                     </ul>
