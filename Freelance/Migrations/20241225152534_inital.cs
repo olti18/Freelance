@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Freelance.Migrations
 {
     /// <inheritdoc />
-    public partial class Proposala : Migration
+    public partial class inital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -168,7 +168,8 @@ namespace Freelance.Migrations
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Budget = table.Column<double>(type: "float", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SelectedProposalId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -189,6 +190,7 @@ namespace Freelance.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProposedAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     SubmittedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProjectPostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FreelancerId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     IsSelected = table.Column<bool>(type: "bit", nullable: false)
@@ -208,6 +210,34 @@ namespace Freelance.Migrations
                         principalTable: "ProjectPosts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ratings",
+                columns: table => new
+                {
+                    RatingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Score = table.Column<int>(type: "int", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProjectPostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ratings", x => x.RatingId);
+                    table.ForeignKey(
+                        name: "FK_Ratings_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Ratings_ProjectPosts_ProjectPostId",
+                        column: x => x.ProjectPostId,
+                        principalTable: "ProjectPosts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -259,6 +289,11 @@ namespace Freelance.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProjectPosts_SelectedProposalId",
+                table: "ProjectPosts",
+                column: "SelectedProposalId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProjectPosts_UserId",
                 table: "ProjectPosts",
                 column: "UserId");
@@ -272,11 +307,41 @@ namespace Freelance.Migrations
                 name: "IX_Proposals_ProjectPostId",
                 table: "Proposals",
                 column: "ProjectPostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_ProjectPostId",
+                table: "Ratings",
+                column: "ProjectPostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_UserId",
+                table: "Ratings",
+                column: "UserId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ProjectPosts_Proposals_SelectedProposalId",
+                table: "ProjectPosts",
+                column: "SelectedProposalId",
+                principalTable: "Proposals",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProjectPosts_AspNetUsers_UserId",
+                table: "ProjectPosts");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Proposals_AspNetUsers_FreelancerId",
+                table: "Proposals");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProjectPosts_Proposals_SelectedProposalId",
+                table: "ProjectPosts");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -293,16 +358,19 @@ namespace Freelance.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Proposals");
+                name: "Ratings");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "ProjectPosts");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Proposals");
+
+            migrationBuilder.DropTable(
+                name: "ProjectPosts");
         }
     }
 }

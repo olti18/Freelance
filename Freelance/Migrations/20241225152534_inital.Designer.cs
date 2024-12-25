@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Freelance.Migrations
 {
     [DbContext(typeof(FreelanceDbContext))]
-    [Migration("20241117211032_tst")]
-    partial class tst
+    [Migration("20241225152534_inital")]
+    partial class inital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,6 +101,37 @@ namespace Freelance.Migrations
                     b.HasIndex("ProjectPostId");
 
                     b.ToTable("Proposals");
+                });
+
+            modelBuilder.Entity("Freelance.Models.Domain.Rating", b =>
+                {
+                    b.Property<Guid>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ProjectPostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("ProjectPostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -354,6 +385,25 @@ namespace Freelance.Migrations
                     b.Navigation("ProjectPost");
                 });
 
+            modelBuilder.Entity("Freelance.Models.Domain.Rating", b =>
+                {
+                    b.HasOne("Freelance.Models.Domain.ProjectPost", "ProjectPost")
+                        .WithMany("Ratings")
+                        .HasForeignKey("ProjectPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ProjectPost");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -408,6 +458,8 @@ namespace Freelance.Migrations
             modelBuilder.Entity("Freelance.Models.Domain.ProjectPost", b =>
                 {
                     b.Navigation("Proposals");
+
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }

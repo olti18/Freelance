@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance\\models\\domain\\projectpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\models\\domain\\projectpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance\\models\\domain\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\models\\domain\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance.ui\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance.ui\\models\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\models\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B21AD5D1-737E-4978-ABC2-1055E7F6B76A}|Freelance\\Freelance.csproj|solutionrelative:freelance\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance.ui\\views\\rating\\viewratings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\rating\\viewratings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance.ui\\views\\proposal\\myproposals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\proposal\\myproposals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,79 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProjectPost.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Models\\Domain\\ProjectPost.cs",
-              "RelativeDocumentMoniker": "Freelance\\Models\\Domain\\ProjectPost.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Models\\Domain\\ProjectPost.cs",
-              "RelativeToolTip": "Freelance\\Models\\Domain\\ProjectPost.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:20:12.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Models\\Domain\\Rating.cs",
-              "RelativeDocumentMoniker": "Freelance\\Models\\Domain\\Rating.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Models\\Domain\\Rating.cs*",
-              "RelativeToolTip": "Freelance\\Models\\Domain\\Rating.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:19:03.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ViewRatings.cshtml",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\Rating\\ViewRatings.cshtml",
-              "RelativeDocumentMoniker": "Freelance.UI\\Views\\Rating\\ViewRatings.cshtml",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\Rating\\ViewRatings.cshtml",
-              "RelativeToolTip": "Freelance.UI\\Views\\Rating\\ViewRatings.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAUwJwAAAAWAAAAAAAAAA==",
+              "Title": "MyProposals.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\Proposal\\MyProposals.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\Proposal\\MyProposals.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\Proposal\\MyProposals.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\Proposal\\MyProposals.cshtml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAqwK8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-25T13:17:42.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RatingController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Controllers\\RatingController.cs",
-              "RelativeDocumentMoniker": "Freelance\\Controllers\\RatingController.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance\\Controllers\\RatingController.cs",
-              "RelativeToolTip": "Freelance\\Controllers\\RatingController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwHUAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:17:04.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RatingDto.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Models\\RatingDto.cs",
-              "RelativeDocumentMoniker": "Freelance.UI\\Models\\RatingDto.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Models\\RatingDto.cs",
-              "RelativeToolTip": "Freelance.UI\\Models\\RatingDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:15:37.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RatingController.cs",
-              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Controllers\\RatingController.cs",
-              "RelativeDocumentMoniker": "Freelance.UI\\Controllers\\RatingController.cs",
-              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Controllers\\RatingController.cs",
-              "RelativeToolTip": "Freelance.UI\\Controllers\\RatingController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAowEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:15:11.243Z",
+              "WhenOpened": "2024-12-25T21:06:37.108Z",
               "EditorCaption": ""
             }
           ]

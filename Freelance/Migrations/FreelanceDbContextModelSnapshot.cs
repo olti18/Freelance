@@ -109,6 +109,9 @@ namespace Freelance.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("ProjectPostId")
                         .HasColumnType("uniqueidentifier");
 
