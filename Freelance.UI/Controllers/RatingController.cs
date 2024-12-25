@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 
 namespace Freelance.UI.Controllers
 {
@@ -65,7 +66,46 @@ namespace Freelance.UI.Controllers
 
 
 
+		[HttpGet]
+		public async Task<IActionResult> ViewRatings()
+		{
+			var jwtToken = HttpContext.Request.Cookies["JwtToken"];
+			if (string.IsNullOrEmpty(jwtToken))
+			{
+				TempData["ErrorMessage"] = "You must be logged in to view your ratings.";
+				return RedirectToAction("Login", "Auth");
+			}
 
+			try
+			{
+				var client = _httpClientFactory.CreateClient();
+				client.DefaultRequestHeaders.Authorization =
+					new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", jwtToken);
+
+				var response = await client.GetAsync("https://localhost:7086/api/Rating/freelancer-ratings");
+				if (response.IsSuccessStatusCode)
+				{
+					var responseContent = await response.Content.ReadAsStringAsync();
+					var ratings = JsonSerializer.Deserialize<List<RatingDto>>(responseContent, new JsonSerializerOptions
+					{
+						PropertyNameCaseInsensitive = true // To handle case-insensitive property matching
+					});
+
+					return View(ratings); // Pass ratings directly to the view
+				}
+				else
+				{
+					var error = await response.Content.ReadAsStringAsync();
+					TempData["ErrorMessage"] = $"Failed to fetch ratings: {error}";
+					return RedirectToAction("Index", "Home");
+				}
+			}
+			catch (Exception ex)
+			{
+				TempData["ErrorMessage"] = $"An error occurred: {ex.Message}";
+				return RedirectToAction("Index", "Home");
+			}
+		}
 
 
 

@@ -1,0 +1,175 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Freelance.UI.Models.RatingDto>
+
+@{
+    ViewData["Title"] = "My Ratings";
+}
+
+<div class="info-section">
+    <h1>My Ratings</h1>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="ratings-table">
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Comment</th>
+                    <th>Project Title</th>
+                    <th>Created Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rating in Model)
+                {
+                    <tr>
+                        <td>@rating.Score</td>
+                        <td>@rating.Comment</td>
+                        <td>@rating.ProjectPostTitle</td>
+                        <td>@rating.CreatedDate.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No ratings available at the moment.</p>
+    }
+</div>
+
+<!-- Add enhanced CSS styles -->
+<style>
+    /* Info Section Styling */
+    .info-section {
+        background: linear-gradient(135deg, #28a745, #218838);
+        color: #fff;
+        border-radius: 20px;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+        margin: 30px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .info-section h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .info-section p {
+            font-size: 1.2rem;
+            color: #f5f5f5;
+            margin-top: 20px;
+        }
+
+    /* Table Styling */
+    .ratings-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+        .ratings-table th, .ratings-table td {
+            padding: 18px;
+            text-align: left;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .ratings-table th {
+            background-color: #218838;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ratings-table td {
+            color: #555;
+            font-weight: 300;
+        }
+
+        .ratings-table tr:hover {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .ratings-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Table alternate row colors */
+        .ratings-table tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        /* Styling for individual rows and cells */
+        .ratings-table td {
+            transition: all 0.3s ease-in-out;
+        }
+
+            .ratings-table td:hover {
+                color: #218838;
+                font-weight: bold;
+            }
+
+    /* Button styling (if needed for future actions) */
+    .btn {
+        background-color: #218838;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #1c7e2b;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+    /* Media Query for Responsiveness */
+    @@media (max-width: 768px) {
+        .info-section
+
+    {
+        padding: 2rem;
+        margin: 20px;
+    }
+
+    .ratings-table th, .ratings-table td {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .ratings-table {
+        font-size: 0.9rem;
+    }
+
+    .info-section h1 {
+        font-size: 2rem;
+    }
+
+    }
+</style>

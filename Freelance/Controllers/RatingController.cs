@@ -99,7 +99,30 @@ namespace Freelance.Controllers
 
 
 
+		[HttpGet("freelancer-ratings")]
+		[Authorize]
+		public async Task<IActionResult> GetFreelancerRatings()
+		{
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get logged-in freelancer's ID
 
+			if (string.IsNullOrEmpty(userId))
+				return Unauthorized("User is not authenticated.");
+
+			// Fetch ratings for the logged-in freelancer
+			var ratings = await context.Ratings
+				.Where(r => r.UserId == userId)
+				.Select(r => new
+				{
+					r.RatingId,
+					r.Score,
+					r.Comment,
+					r.CreatedDate,
+					ProjectPostTitle = r.ProjectPost.Title // Assuming ProjectPost has a Title field
+				})
+				.ToListAsync();
+
+			return Ok(ratings);
+		}
 
 
 		[HttpPost("rate-freelancer")]

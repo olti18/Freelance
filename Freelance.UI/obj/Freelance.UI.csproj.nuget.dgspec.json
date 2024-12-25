@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj": {}
+    "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj": {
+    "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj",
+        "projectUniqueName": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj",
         "projectName": "Freelance.UI",
-        "projectPath": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj",
+        "projectPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Freelance.UI.csproj",
         "packagesPath": "C:\\Users\\oltib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oltib\\Source\\Repos\\Freelance\\Freelance.UI\\obj\\",
+        "outputPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -231,6 +231,16 @@
   },
   {
     "ContainingType": "Freelance.Controllers.RatingController",
+    "Method": "GetFreelancerRatings",
+    "RelativePath": "api/Rating/freelancer-ratings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Freelance.Controllers.RatingController",
     "Method": "RateFreelancer",
     "RelativePath": "api/Rating/rate-freelancer",
     "HttpMethod": "POST",

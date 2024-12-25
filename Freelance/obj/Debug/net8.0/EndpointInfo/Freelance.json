@@ -373,6 +373,18 @@
         }
       }
     },
+    "/api/Rating/freelancer-ratings": {
+      "get": {
+        "tags": [
+          "Rating"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Rating/rate-freelancer": {
       "post": {
         "tags": [

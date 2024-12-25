@@ -11,8 +11,8 @@ namespace Freelance.Models.Domain
 		// Foreign Keys
 		public string UserId { get; set; } // Freelancer receiving the rating
 		public Guid ProjectPostId { get; set; } // Related job post
-
-		// Navigation Properties
+		public DateTime CreatedDate { get; set; } = DateTime.Now; // Date of rating
+																  // Navigation Properties
 		public IdentityUser User { get; set; } // Freelancer
 		public ProjectPost ProjectPost { get; set; } // Job post
 	}
