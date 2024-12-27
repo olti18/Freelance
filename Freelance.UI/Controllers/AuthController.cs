@@ -99,10 +99,11 @@ namespace Freelance.UI.Controllers
 			if (response.IsSuccessStatusCode)
 			{
 				TempData["Message"] = "Registration successful! Please log in.";
-				return RedirectToAction("Login");
+				return RedirectToAction("Login","Auth");
 			}
 
 			ModelState.AddModelError("", "Registration failed. Please try again.");
+			
 			return View(model);
 		}
 

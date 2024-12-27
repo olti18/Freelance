@@ -230,6 +230,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Freelance.Controllers.ProposalController",
+    "Method": "GetMyProposals",
+    "RelativePath": "api/Proposal/GetMyProposals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Freelance.Controllers.RatingController",
     "Method": "GetFreelancerRatings",
     "RelativePath": "api/Rating/freelancer-ratings",

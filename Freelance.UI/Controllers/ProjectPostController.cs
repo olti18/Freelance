@@ -1,4 +1,5 @@
 ﻿using Freelance.UI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -17,6 +18,7 @@ namespace Freelance.UI.Controllers
 		}
 
 		[HttpGet]
+
 		public async Task<IActionResult> Index()
 		{
 			List<ProjectPostDto> response = new List<ProjectPostDto>();

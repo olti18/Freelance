@@ -31,6 +31,7 @@ namespace Freelance.Controllers
 
 		[HttpPost]
 		[Authorize]
+	
 		public async Task<IActionResult> CreateProposalAsync (AddProposalDto addProposalDto)
 		{
 			if (addProposalDto == null)	
@@ -161,6 +162,45 @@ namespace Freelance.Controllers
 
 			return Ok(new { Message = "Proposal accepted successfully." });
 		}
+
+		[HttpGet("GetMyProposals")]
+		[Authorize]
+		public async Task<IActionResult> GetMyProposals()
+		{
+			// Merr UserId nga Claims
+			var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+			if (string.IsNullOrEmpty(userId))
+			{
+				return Unauthorized("User is not authenticated.");
+			}
+
+			// Merr propozimet nga baza e të dhënave
+			var proposals = await _appDbContext.Proposals
+		.Where(p => p.FreelancerId == userId)
+		.Select(p => new ProjectWithProposalsDto
+		{
+			ProposalId = p.Id,
+			Content = p.Content,
+			ProposedAmount = p.ProposedAmount,
+			SubmittedDate = p.SubmittedDate,
+			CreatedDate = p.CreatedDate,
+			IsSelected = p.IsSelected,
+			Project = new ProjectDto
+			{
+				ProjectId = p.ProjectPost.Id,
+				Title = p.ProjectPost.Title,
+				Description = p.ProjectPost.Description,
+				Budget = p.ProjectPost.Budget,
+				Author = p.ProjectPost.Author,
+				CreatedDate = p.ProjectPost.CreatedDate
+			}
+		})
+		.ToListAsync();
+
+			return Ok(proposals);
+		}
+
 
 
 	}

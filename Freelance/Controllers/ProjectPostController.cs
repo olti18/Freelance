@@ -33,8 +33,9 @@ namespace Freelance.Controllers
         //[HttpPost("Create-Project-Post")] po gjun error qitu
         [HttpPost]
         [Authorize]
-        //[ValidateModel]
-        public async Task<IActionResult> CreateAsync([FromBody] AddProjectPostDto addProjectPostDto)
+		
+		//[ValidateModel]
+		public async Task<IActionResult> CreateAsync([FromBody] AddProjectPostDto addProjectPostDto)
         {
             var user = await userManager.GetUserAsync(User);
             if (user == null) { return Unauthorized("User ID claim not found."); }

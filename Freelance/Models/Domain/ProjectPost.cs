@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -7,10 +8,19 @@ namespace Freelance.Models.Domain
     public class ProjectPost
     {
         public Guid Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Author { get; set; }
-        public Double Budget { get; set; }
+
+		[Required(ErrorMessage = "Title is required.")]
+		public string Title { get; set; }
+
+		[Required(ErrorMessage = "Description is required.")]
+		public string Description { get; set; }
+
+		[Required(ErrorMessage = "Author is required.")]
+		[RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Author can only contain letters and spaces.")]
+		public string Author { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "Budget must be a positive value.")]
+		public Double Budget { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         // Foreign Key 
         public IdentityUser User { get; set; }

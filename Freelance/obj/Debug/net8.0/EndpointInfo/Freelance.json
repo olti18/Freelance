@@ -373,6 +373,18 @@
         }
       }
     },
+    "/api/Proposal/GetMyProposals": {
+      "get": {
+        "tags": [
+          "Proposal"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Rating/freelancer-ratings": {
       "get": {
         "tags": [

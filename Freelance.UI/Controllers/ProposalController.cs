@@ -1,4 +1,5 @@
 ﻿using Freelance.UI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -13,6 +14,14 @@ namespace Freelance.UI.Controllers
 		{
 			this._httpClientFactory = _httpClientFactory;
 		}
+
+
+		
+
+
+
+
+
 
 		[HttpGet("Proposalss/MyProposalss")]
 		public async Task<IActionResult> MyProposals()

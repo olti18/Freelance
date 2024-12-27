@@ -11,6 +11,8 @@
 		public string FreelancerName { get; set; }
 		public bool IsSelected { get; set; }
 		public decimal Budget { get; set; }
+
+
 		/*public int ProposalId { get; set; }
 		public string Content { get; set; }
 		public decimal ProposedAmount { get; set; }
