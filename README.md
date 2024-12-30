@@ -1,34 +1,33 @@
 # Freelance
 
-Freelance Web is a platform designed to connect freelancers and clients for seamless collaboration on projects. It provides an intuitive interface for job postings, proposal submissions, and profile management, making it easy to hire talent or find work.
+🎨 Freelance Web
+Freelance Web is a dynamic platform designed to connect freelancers and clients for seamless collaboration on projects. It offers an intuitive interface for job postings, proposal submissions, profile management, and ratings, making it easy to hire talent or find work.
 
-Features
-Authentication & Authorization
-Secure JWT token-based authentication.
-Role-based access control (Client and Freelancer).
-User Profiles
-Profile photos, descriptions, and work experience sections.
-Editable profiles for freelancers and clients.
-Job Management
-Clients can post jobs with details like budget, deadline, and category.
+🚀 Features
+🔒 Authentication & Authorization
+JWT token-based authentication for secure access.
+Role-based access control for Clients and Freelancers.
+
+📋 Job Management
+Clients can post jobs with details: budget, deadline, and category.
 Freelancers can search, filter, and submit proposals.
-Proposal Handling
-Track proposal status—pending, accepted, or rejected.
-Clients can review and accept proposals directly.
-Ratings & Reviews
+📧 Proposal Handling
+Track proposal status—Pending, Accepted, or Rejected.
+Clients can review and accept proposals.
+⭐ Ratings & Reviews
 Clients can rate and review freelancers after project completion.
-Admin Panel
-Admins can manage users, jobs, and activity logs.
-Notifications
-Real-time updates on job activity, proposal status, and ratings.
-Technologies Used
+🛠️ Admin Panel
+Manage users, jobs, and activity logs.
+🔔 Notifications
+Get real-time updates for job activity, proposals, and ratings.
+🛠️ Technologies Used
 Backend: .NET Core, ASP.NET MVC
 Frontend: HTML, CSS, JavaScript
 Database: SQL Server
 Authentication: IdentityUser with JWT Tokens
 Mapping: AutoMapper for DTO conversions
-Containerization: Docker support
-Installation
+
+📦 Installation
 Clone the Repository
 
 bash
