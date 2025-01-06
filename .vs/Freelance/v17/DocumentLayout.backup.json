@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|c:\\users\\oltib\\onedrive\\desktop\\repos\\freelance\\freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7EB20F94-F4FA-4ADA-BCB4-D68FC4F21962}|Freelance.UI\\Freelance.UI.csproj|solutionrelative:freelance.ui\\views\\projectpost\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "RelativeDocumentMoniker": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "ToolTip": "C:\\Users\\oltib\\OneDrive\\Desktop\\repos\\Freelance\\Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "RelativeToolTip": "Freelance.UI\\Views\\ProjectPost\\Index.cshtml",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAAAAQBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-27T21:22:33.886Z",
+              "EditorCaption": ""
             }
           ]
         }
