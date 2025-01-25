@@ -1,7 +1,7 @@
 # Freelance
 
 🎨 Freelance Web
-Freelance Web is a dynamic platform designed to connect freelancers and clients for seamless collaboration on projects. It offers an intuitive interface for job postings, proposal submissions, profile management, and ratings, making it easy to hire talent or find work.
+Freelance Web is a dynamic platform designed to connect freelancers and clients for seamless collaboration on projects. It offers an intuitive interface for job postings, proposal submissions, and ratings, making it easy to hire talent or find work.
 
 🚀 Features
 🔒 Authentication & Authorization
