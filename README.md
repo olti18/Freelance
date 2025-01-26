@@ -22,7 +22,7 @@ Manage users, jobs, and activity logs.
 Get real-time updates for job activity, proposals, and ratings.
 🛠️ Technologies Used
 Backend: .NET Core, ASP.NET MVC
-Frontend: HTML, CSS, JavaScript
+Frontend: HTML, CSS, JavaScript and Bootstrap
 Database: SQL Server
 Authentication: IdentityUser with JWT Tokens
 Mapping: AutoMapper for DTO conversions
