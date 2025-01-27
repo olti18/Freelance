@@ -18,8 +18,6 @@ Clients can review and accept proposals.
 Clients can rate and review freelancers after project completion.
 🛠️ Admin Panel
 Manage users, jobs, and activity logs.
-🔔 Notifications
-Get real-time updates for job activity, proposals, and ratings.
 🛠️ Technologies Used
 Backend: .NET Core, ASP.NET MVC
 Frontend: HTML, CSS, JavaScript and Bootstrap
