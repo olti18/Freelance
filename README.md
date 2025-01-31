@@ -30,7 +30,7 @@ Clone the Repository
 
 bash
 Copy code
-git clone https://github.com/yourusername/freelance-web.git
+git clone https://github.com/olti18/freelance-web.git
 cd freelance-web
 Configure Database
 
